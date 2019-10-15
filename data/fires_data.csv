@@ -143,41 +143,41 @@
 8,2000,Acre,136
 8,2001,Acre,396
 8,2002,Acre,728
-8,2003,Acre,1976
+8,2003,Acre,1.976
 8,2004,Acre,645
-8,2005,Acre,4198
+8,2005,Acre,4.198
 8,2006,Acre,839
 8,2007,Acre,960
 8,2008,Acre,445
 8,2009,Acre,194
-8,2010,Acre,1682
+8,2010,Acre,1.682
 8,2011,Acre,425
 8,2012,Acre,739
 8,2013,Acre,679
-8,2014,Acre,11
-8,2015,Acre,1397
-8,2016,Acre,2188
-8,2017,Acre,1493
+8,2014,Acre,1.1
+8,2015,Acre,1.397
+8,2016,Acre,2.188
+8,2017,Acre,1.493
 9,1998,Acre,509
 9,1999,Acre,209
 9,2000,Acre,265
 9,2001,Acre,290
-9,2002,Acre,1949
-9,2003,Acre,3942
-9,2004,Acre,1978
-9,2005,Acre,4253
-9,2006,Acre,237
-9,2007,Acre,208
-9,2008,Acre,1666
-9,2009,Acre,1265
-9,2010,Acre,2531
-9,2011,Acre,1204
-9,2012,Acre,1996
-9,2013,Acre,2136
-9,2014,Acre,2175
-9,2015,Acre,2928
-9,2016,Acre,3586
-9,2017,Acre,3429
+9,2002,Acre,1.949
+9,2003,Acre,3.942
+9,2004,Acre,1.978
+9,2005,Acre,4.253
+9,2006,Acre,2.37
+9,2007,Acre,2.08
+9,2008,Acre,1.666
+9,2009,Acre,1.265
+9,2010,Acre,2.531
+9,2011,Acre,1.204
+9,2012,Acre,1.996
+9,2013,Acre,2.136
+9,2014,Acre,2.175
+9,2015,Acre,2.928
+9,2016,Acre,3.586
+9,2017,Acre,3.429
 10,1998,Acre,44
 10,1999,Acre,60
 10,2000,Acre,18
@@ -197,7 +197,7 @@
 10,2014,Acre,406
 10,2015,Acre,905
 10,2016,Acre,509
-10,2017,Acre,1508
+10,2017,Acre,1.508
 11,1998,Acre,0
 11,1999,Acre,0
 11,2000,Acre,0
@@ -680,21 +680,21 @@
 11,1999,Amapa,26
 11,2000,Amapa,157
 11,2001,Amapa,406
-11,2002,Amapa,1096
+11,2002,Amapa,1.096
 11,2003,Amapa,750
 11,2004,Amapa,949
 11,2005,Amapa,685
 11,2006,Amapa,207
 11,2007,Amapa,198
 11,2008,Amapa,266
-11,2009,Amapa,1019
+11,2009,Amapa,1.019
 11,2010,Amapa,339
 11,2011,Amapa,282
 11,2012,Amapa,969
 11,2013,Amapa,341
 11,2014,Amapa,484
-11,2015,Amapa,13
-11,2016,Amapa,1161
+11,2015,Amapa,1.3
+11,2016,Amapa,1.161
 11,2017,Amapa,858
 12,1998,Amapa,84
 12,1999,Amapa,41
@@ -853,48 +853,48 @@
 7,2013,Amazonas,248
 7,2014,Amazonas,202
 7,2015,Amazonas,356
-7,2016,Amazonas,1137
-7,2017,Amazonas,1975
+7,2016,Amazonas,1.137
+7,2017,Amazonas,1.975
 8,1998,Amazonas,321
 8,1999,Amazonas,259
 8,2000,Amazonas,180
 8,2001,Amazonas,501
 8,2002,Amazonas,741
-8,2003,Amazonas,1867
-8,2004,Amazonas,1207
-8,2005,Amazonas,2316
-8,2006,Amazonas,1422
-8,2007,Amazonas,2241
+8,2003,Amazonas,1.867
+8,2004,Amazonas,1.207
+8,2005,Amazonas,2.316
+8,2006,Amazonas,1.422
+8,2007,Amazonas,2.241
 8,2008,Amazonas,861
-8,2009,Amazonas,1321
-8,2010,Amazonas,3727
-8,2011,Amazonas,1243
-8,2012,Amazonas,3011
-8,2013,Amazonas,1276
-8,2014,Amazonas,3852
-8,2015,Amazonas,4564
-8,2016,Amazonas,3611
-8,2017,Amazonas,6316
+8,2009,Amazonas,1.321
+8,2010,Amazonas,3.727
+8,2011,Amazonas,1.243
+8,2012,Amazonas,3.011
+8,2013,Amazonas,1.276
+8,2014,Amazonas,3.852
+8,2015,Amazonas,4.564
+8,2016,Amazonas,3.611
+8,2017,Amazonas,6.316
 9,1998,Amazonas,267
 9,1999,Amazonas,216
 9,2000,Amazonas,189
 9,2001,Amazonas,166
 9,2002,Amazonas,928
-9,2003,Amazonas,1401
+9,2003,Amazonas,1.401
 9,2004,Amazonas,911
-9,2005,Amazonas,2812
-9,2006,Amazonas,2218
-9,2007,Amazonas,136
+9,2005,Amazonas,2.812
+9,2006,Amazonas,2.218
+9,2007,Amazonas,1.36
 9,2008,Amazonas,998
-9,2009,Amazonas,3091
-9,2010,Amazonas,2781
-9,2011,Amazonas,1295
-9,2012,Amazonas,2392
-9,2013,Amazonas,1739
-9,2014,Amazonas,3057
-9,2015,Amazonas,5882
-9,2016,Amazonas,3119
-9,2017,Amazonas,4033
+9,2009,Amazonas,3.091
+9,2010,Amazonas,2.781
+9,2011,Amazonas,1.295
+9,2012,Amazonas,2.392
+9,2013,Amazonas,1.739
+9,2014,Amazonas,3.057
+9,2015,Amazonas,5.882
+9,2016,Amazonas,3.119
+9,2017,Amazonas,4.033
 10,1998,Amazonas,83
 10,1999,Amazonas,479
 10,2000,Amazonas,145
@@ -906,15 +906,15 @@
 10,2006,Amazonas,721
 10,2007,Amazonas,215
 10,2008,Amazonas,632
-10,2009,Amazonas,2189
+10,2009,Amazonas,2.189
 10,2010,Amazonas,889
 10,2011,Amazonas,694
-10,2012,Amazonas,1238
-10,2013,Amazonas,1202
+10,2012,Amazonas,1.238
+10,2013,Amazonas,1.202
 10,2014,Amazonas,952
-10,2015,Amazonas,2494
-10,2016,Amazonas,2105
-10,2017,Amazonas,1581
+10,2015,Amazonas,2.494
+10,2016,Amazonas,2.105
+10,2017,Amazonas,1.581
 11,1998,Amazonas,6
 11,1999,Amazonas,32
 11,2000,Amazonas,27
@@ -932,7 +932,7 @@
 11,2012,Amazonas,682
 11,2013,Amazonas,220
 11,2014,Amazonas,676
-11,2015,Amazonas,1054
+11,2015,Amazonas,1.054
 11,2016,Amazonas,591
 11,2017,Amazonas,552
 12,1998,Amazonas,196
@@ -1098,80 +1098,80 @@
 8,1999,Bahia,453
 8,2000,Bahia,633
 8,2001,Bahia,979
-8,2002,Bahia,1827
-8,2003,Bahia,1039
-8,2004,Bahia,143
+8,2002,Bahia,1.827
+8,2003,Bahia,1.039
+8,2004,Bahia,1.43
 8,2005,Bahia,948
 8,2006,Bahia,995
-8,2007,Bahia,3734
+8,2007,Bahia,3.734
 8,2008,Bahia,611
 8,2009,Bahia,439
-8,2010,Bahia,2423
-8,2011,Bahia,1795
-8,2012,Bahia,1835
+8,2010,Bahia,2.423
+8,2011,Bahia,1.795
+8,2012,Bahia,1.835
 8,2013,Bahia,610
 8,2014,Bahia,674
 8,2015,Bahia,829
 8,2016,Bahia,724
-8,2017,Bahia,1018
-9,1998,Bahia,2718
-9,1999,Bahia,1275
-9,2000,Bahia,2285
-9,2001,Bahia,3964
-9,2002,Bahia,6439
-9,2003,Bahia,8847
-9,2004,Bahia,6433
-9,2005,Bahia,4066
-9,2006,Bahia,3006
-9,2007,Bahia,7438
-9,2008,Bahia,4837
-9,2009,Bahia,361
-9,2010,Bahia,5323
-9,2011,Bahia,7086
-9,2012,Bahia,7495
-9,2013,Bahia,2681
-9,2014,Bahia,2604
-9,2015,Bahia,7956
-9,2016,Bahia,1819
-9,2017,Bahia,1791
-10,1998,Bahia,1969
-10,1999,Bahia,1307
-10,2000,Bahia,335
-10,2001,Bahia,1687
-10,2002,Bahia,5414
-10,2003,Bahia,4264
-10,2004,Bahia,481
-10,2005,Bahia,8405
-10,2006,Bahia,2079
-10,2007,Bahia,4981
-10,2008,Bahia,7691
-10,2009,Bahia,2552
-10,2010,Bahia,5264
-10,2011,Bahia,2166
-10,2012,Bahia,4607
-10,2013,Bahia,1969
-10,2014,Bahia,2763
-10,2015,Bahia,4989
-10,2016,Bahia,1415
-10,2017,Bahia,4005
+8,2017,Bahia,1.018
+9,1998,Bahia,2.718
+9,1999,Bahia,1.275
+9,2000,Bahia,2.285
+9,2001,Bahia,3.964
+9,2002,Bahia,6.439
+9,2003,Bahia,8.847
+9,2004,Bahia,6.433
+9,2005,Bahia,4.066
+9,2006,Bahia,3.006
+9,2007,Bahia,7.438
+9,2008,Bahia,4.837
+9,2009,Bahia,3.61
+9,2010,Bahia,5.323
+9,2011,Bahia,7.086
+9,2012,Bahia,7.495
+9,2013,Bahia,2.681
+9,2014,Bahia,2.604
+9,2015,Bahia,7.956
+9,2016,Bahia,1.819
+9,2017,Bahia,1.791
+10,1998,Bahia,1.969
+10,1999,Bahia,1.307
+10,2000,Bahia,3.35
+10,2001,Bahia,1.687
+10,2002,Bahia,5.414
+10,2003,Bahia,4.264
+10,2004,Bahia,4.81
+10,2005,Bahia,8.405
+10,2006,Bahia,2.079
+10,2007,Bahia,4.981
+10,2008,Bahia,7.691
+10,2009,Bahia,2.552
+10,2010,Bahia,5.264
+10,2011,Bahia,2.166
+10,2012,Bahia,4.607
+10,2013,Bahia,1.969
+10,2014,Bahia,2.763
+10,2015,Bahia,4.989
+10,2016,Bahia,1.415
+10,2017,Bahia,4.005
 11,1998,Bahia,49
 11,1999,Bahia,49
 11,2000,Bahia,114
 11,2001,Bahia,699
-11,2002,Bahia,102
+11,2002,Bahia,1.02
 11,2003,Bahia,533
-11,2004,Bahia,1736
-11,2005,Bahia,1595
+11,2004,Bahia,1.736
+11,2005,Bahia,1.595
 11,2006,Bahia,239
-11,2007,Bahia,2126
-11,2008,Bahia,3175
+11,2007,Bahia,2.126
+11,2008,Bahia,3.175
 11,2009,Bahia,402
 11,2010,Bahia,605
 11,2011,Bahia,176
 11,2012,Bahia,168
 11,2013,Bahia,288
 11,2014,Bahia,348
-11,2015,Bahia,1705
+11,2015,Bahia,1.705
 11,2016,Bahia,408
 11,2017,Bahia,174
 12,1998,Bahia,82
@@ -1191,7 +1191,7 @@
 12,2012,Bahia,477
 12,2013,Bahia,131
 12,2014,Bahia,144
-12,2015,Bahia,1408
+12,2015,Bahia,1.408
 12,2016,Bahia,164
 1,1998,Ceara,0
 1,1999,Ceara,47
@@ -1373,64 +1373,64 @@
 9,2015,Ceara,214
 9,2016,Ceara,370
 9,2017,Ceara,505
-10,1998,Ceara,1014
+10,1998,Ceara,1.014
 10,1999,Ceara,309
 10,2000,Ceara,875
-10,2001,Ceara,2045
-10,2002,Ceara,1606
-10,2003,Ceara,1761
-10,2004,Ceara,1217
-10,2005,Ceara,1378
+10,2001,Ceara,2.045
+10,2002,Ceara,1.606
+10,2003,Ceara,1.761
+10,2004,Ceara,1.217
+10,2005,Ceara,1.378
 10,2006,Ceara,581
 10,2007,Ceara,964
 10,2008,Ceara,816
 10,2009,Ceara,435
 10,2010,Ceara,502
 10,2011,Ceara,415
-10,2012,Ceara,1104
+10,2012,Ceara,1.104
 10,2013,Ceara,466
 10,2014,Ceara,517
 10,2015,Ceara,658
-10,2016,Ceara,131
+10,2016,Ceara,1.31
 10,2017,Ceara,949
 11,1998,Ceara,575
 11,1999,Ceara,524
 11,2000,Ceara,669
-11,2001,Ceara,2456
-11,2002,Ceara,2715
-11,2003,Ceara,3327
-11,2004,Ceara,29
-11,2005,Ceara,2483
-11,2006,Ceara,1012
-11,2007,Ceara,1443
-11,2008,Ceara,1753
-11,2009,Ceara,1653
-11,2010,Ceara,1652
-11,2011,Ceara,1561
+11,2001,Ceara,2.456
+11,2002,Ceara,2.715
+11,2003,Ceara,3.327
+11,2004,Ceara,2.9
+11,2005,Ceara,2.483
+11,2006,Ceara,1.012
+11,2007,Ceara,1.443
+11,2008,Ceara,1.753
+11,2009,Ceara,1.653
+11,2010,Ceara,1.652
+11,2011,Ceara,1.561
 11,2012,Ceara,995
-11,2013,Ceara,1081
+11,2013,Ceara,1.081
 11,2014,Ceara,829
-11,2015,Ceara,1081
-11,2016,Ceara,1328
+11,2015,Ceara,1.081
+11,2016,Ceara,1.328
 11,2017,Ceara,812
 12,1998,Ceara,276
 12,1999,Ceara,397
 12,2000,Ceara,389
 12,2001,Ceara,545
-12,2002,Ceara,1787
-12,2003,Ceara,2436
-12,2004,Ceara,3158
-12,2005,Ceara,136
-12,2006,Ceara,1161
-12,2007,Ceara,1177
-12,2008,Ceara,1655
-12,2009,Ceara,1987
+12,2002,Ceara,1.787
+12,2003,Ceara,2.436
+12,2004,Ceara,3.158
+12,2005,Ceara,1.36
+12,2006,Ceara,1.161
+12,2007,Ceara,1.177
+12,2008,Ceara,1.655
+12,2009,Ceara,1.987
 12,2010,Ceara,578
-12,2011,Ceara,1441
+12,2011,Ceara,1.441
 12,2012,Ceara,631
 12,2013,Ceara,956
 12,2014,Ceara,643
-12,2015,Ceara,1021
+12,2015,Ceara,1.021
 12,2016,Ceara,819
 1,1998,Distrito Federal,0
 1,1999,Distrito Federal,0
@@ -2050,66 +2050,66 @@
 7,2015,Goias,347
 7,2016,Goias,837
 7,2017,Goias,577
-8,1998,Goias,2218
-8,1999,Goias,1198
+8,1998,Goias,2.218
+8,1999,Goias,1.198
 8,2000,Goias,925
 8,2001,Goias,787
-8,2002,Goias,1428
+8,2002,Goias,1.428
 8,2003,Goias,902
-8,2004,Goias,1498
+8,2004,Goias,1.498
 8,2005,Goias,639
 8,2006,Goias,588
-8,2007,Goias,2382
+8,2007,Goias,2.382
 8,2008,Goias,568
 8,2009,Goias,647
-8,2010,Goias,2914
-8,2011,Goias,1613
+8,2010,Goias,2.914
+8,2011,Goias,1.613
 8,2012,Goias,912
 8,2013,Goias,488
-8,2014,Goias,1255
+8,2014,Goias,1.255
 8,2015,Goias,943
-8,2016,Goias,1032
-8,2017,Goias,1492
-9,1998,Goias,2867
-9,1999,Goias,1898
-9,2000,Goias,1293
-9,2001,Goias,1863
-9,2002,Goias,352
-9,2003,Goias,1662
-9,2004,Goias,2965
-9,2005,Goias,1341
-9,2006,Goias,1463
-9,2007,Goias,3745
-9,2008,Goias,1255
+8,2016,Goias,1.032
+8,2017,Goias,1.492
+9,1998,Goias,2.867
+9,1999,Goias,1.898
+9,2000,Goias,1.293
+9,2001,Goias,1.863
+9,2002,Goias,3.52
+9,2003,Goias,1.662
+9,2004,Goias,2.965
+9,2005,Goias,1.341
+9,2006,Goias,1.463
+9,2007,Goias,3.745
+9,2008,Goias,1.255
 9,2009,Goias,685
-9,2010,Goias,5075
-9,2011,Goias,2259
-9,2012,Goias,2452
+9,2010,Goias,5.075
+9,2011,Goias,2.259
+9,2012,Goias,2.452
 9,2013,Goias,684
-9,2014,Goias,1687
-9,2015,Goias,2296
-9,2016,Goias,1703
-9,2017,Goias,3238
-10,1998,Goias,1034
+9,2014,Goias,1.687
+9,2015,Goias,2.296
+9,2016,Goias,1.703
+9,2017,Goias,3.238
+10,1998,Goias,1.034
 10,1999,Goias,743
 10,2000,Goias,905
 10,2001,Goias,479
-10,2002,Goias,1367
-10,2003,Goias,1183
-10,2004,Goias,1275
-10,2005,Goias,1717
+10,2002,Goias,1.367
+10,2003,Goias,1.183
+10,2004,Goias,1.275
+10,2005,Goias,1.717
 10,2006,Goias,178
-10,2007,Goias,1195
-10,2008,Goias,1231
+10,2007,Goias,1.195
+10,2008,Goias,1.231
 10,2009,Goias,367
-10,2010,Goias,1227
+10,2010,Goias,1.227
 10,2011,Goias,476
-10,2012,Goias,1524
+10,2012,Goias,1.524
 10,2013,Goias,606
-10,2014,Goias,1947
-10,2015,Goias,1807
+10,2014,Goias,1.947
+10,2015,Goias,1.807
 10,2016,Goias,522
-10,2017,Goias,2401
+10,2017,Goias,2.401
 11,1998,Goias,47
 11,1999,Goias,110
 11,2000,Goias,26
@@ -2273,121 +2273,121 @@
 7,1999,Maranhao,258
 7,2000,Maranhao,233
 7,2001,Maranhao,549
-7,2002,Maranhao,1271
-7,2003,Maranhao,1103
-7,2004,Maranhao,1366
-7,2005,Maranhao,1152
+7,2002,Maranhao,1.271
+7,2003,Maranhao,1.103
+7,2004,Maranhao,1.366
+7,2005,Maranhao,1.152
 7,2006,Maranhao,512
-7,2007,Maranhao,1205
+7,2007,Maranhao,1.205
 7,2008,Maranhao,502
 7,2009,Maranhao,972
-7,2010,Maranhao,2323
-7,2011,Maranhao,1024
-7,2012,Maranhao,3548
-7,2013,Maranhao,1111
-7,2014,Maranhao,2068
-7,2015,Maranhao,1642
-7,2016,Maranhao,2096
-7,2017,Maranhao,2521
-8,1998,Maranhao,1176
+7,2010,Maranhao,2.323
+7,2011,Maranhao,1.024
+7,2012,Maranhao,3.548
+7,2013,Maranhao,1.111
+7,2014,Maranhao,2.068
+7,2015,Maranhao,1.642
+7,2016,Maranhao,2.096
+7,2017,Maranhao,2.521
+8,1998,Maranhao,1.176
 8,1999,Maranhao,895
 8,2000,Maranhao,839
-8,2001,Maranhao,2037
-8,2002,Maranhao,3481
-8,2003,Maranhao,2023
-8,2004,Maranhao,1889
-8,2005,Maranhao,2239
-8,2006,Maranhao,1382
-8,2007,Maranhao,8409
+8,2001,Maranhao,2.037
+8,2002,Maranhao,3.481
+8,2003,Maranhao,2.023
+8,2004,Maranhao,1.889
+8,2005,Maranhao,2.239
+8,2006,Maranhao,1.382
+8,2007,Maranhao,8.409
 8,2008,Maranhao,713
-8,2009,Maranhao,1766
-8,2010,Maranhao,6353
-8,2011,Maranhao,2138
-8,2012,Maranhao,10395
-8,2013,Maranhao,2098
-8,2014,Maranhao,5592
-8,2015,Maranhao,5428
-8,2016,Maranhao,3723
-8,2017,Maranhao,3875
-9,1998,Maranhao,3935
-9,1999,Maranhao,1739
-9,2000,Maranhao,1365
-9,2001,Maranhao,4618
-9,2002,Maranhao,3181
-9,2003,Maranhao,5878
-9,2004,Maranhao,4673
-9,2005,Maranhao,6292
-9,2006,Maranhao,2907
-9,2007,Maranhao,8524
-9,2008,Maranhao,2761
-9,2009,Maranhao,2404
-9,2010,Maranhao,9795
-9,2011,Maranhao,4632
-9,2012,Maranhao,7626
-9,2013,Maranhao,388
-9,2014,Maranhao,4373
-9,2015,Maranhao,6423
-9,2016,Maranhao,3166
-9,2017,Maranhao,14825
-10,1998,Maranhao,5137
-10,1999,Maranhao,3208
-10,2000,Maranhao,2654
-10,2001,Maranhao,6661
-10,2002,Maranhao,5182
-10,2003,Maranhao,6085
-10,2004,Maranhao,3604
-10,2005,Maranhao,6472
-10,2006,Maranhao,3024
-10,2007,Maranhao,4772
-10,2008,Maranhao,3498
-10,2009,Maranhao,1861
-10,2010,Maranhao,3228
-10,2011,Maranhao,2404
+8,2009,Maranhao,1.766
+8,2010,Maranhao,6.353
+8,2011,Maranhao,2.138
+8,2012,Maranhao,10.395
+8,2013,Maranhao,2.098
+8,2014,Maranhao,5.592
+8,2015,Maranhao,5.428
+8,2016,Maranhao,3.723
+8,2017,Maranhao,3.875
+9,1998,Maranhao,3.935
+9,1999,Maranhao,1.739
+9,2000,Maranhao,1.365
+9,2001,Maranhao,4.618
+9,2002,Maranhao,3.181
+9,2003,Maranhao,5.878
+9,2004,Maranhao,4.673
+9,2005,Maranhao,6.292
+9,2006,Maranhao,2.907
+9,2007,Maranhao,8.524
+9,2008,Maranhao,2.761
+9,2009,Maranhao,2.404
+9,2010,Maranhao,9.795
+9,2011,Maranhao,4.632
+9,2012,Maranhao,7.626
+9,2013,Maranhao,3.88
+9,2014,Maranhao,4.373
+9,2015,Maranhao,6.423
+9,2016,Maranhao,3.166
+9,2017,Maranhao,14.825
+10,1998,Maranhao,5.137
+10,1999,Maranhao,3.208
+10,2000,Maranhao,2.654
+10,2001,Maranhao,6.661
+10,2002,Maranhao,5.182
+10,2003,Maranhao,6.085
+10,2004,Maranhao,3.604
+10,2005,Maranhao,6.472
+10,2006,Maranhao,3.024
+10,2007,Maranhao,4.772
+10,2008,Maranhao,3.498
+10,2009,Maranhao,1.861
+10,2010,Maranhao,3.228
+10,2011,Maranhao,2.404
 10,2012,Maranhao,5
-10,2013,Maranhao,2918
-10,2014,Maranhao,5812
-10,2015,Maranhao,6746
-10,2016,Maranhao,5351
-10,2017,Maranhao,6011
-11,1998,Maranhao,2237
-11,1999,Maranhao,1494
-11,2000,Maranhao,2267
-11,2001,Maranhao,3525
-11,2002,Maranhao,583
-11,2003,Maranhao,4929
-11,2004,Maranhao,6398
-11,2005,Maranhao,4769
-11,2006,Maranhao,2004
-11,2007,Maranhao,2297
-11,2008,Maranhao,2331
+10,2013,Maranhao,2.918
+10,2014,Maranhao,5.812
+10,2015,Maranhao,6.746
+10,2016,Maranhao,5.351
+10,2017,Maranhao,6.011
+11,1998,Maranhao,2.237
+11,1999,Maranhao,1.494
+11,2000,Maranhao,2.267
+11,2001,Maranhao,3.525
+11,2002,Maranhao,5.83
+11,2003,Maranhao,4.929
+11,2004,Maranhao,6.398
+11,2005,Maranhao,4.769
+11,2006,Maranhao,2.004
+11,2007,Maranhao,2.297
+11,2008,Maranhao,2.331
 11,2009,Maranhao,5
-11,2010,Maranhao,4005
-11,2011,Maranhao,2261
-11,2012,Maranhao,201
-11,2013,Maranhao,2529
-11,2014,Maranhao,3869
-11,2015,Maranhao,435
-11,2016,Maranhao,3982
-11,2017,Maranhao,23
-12,1998,Maranhao,1399
-12,1999,Maranhao,1001
-12,2000,Maranhao,1461
-12,2001,Maranhao,1296
-12,2002,Maranhao,2165
-12,2003,Maranhao,2424
-12,2004,Maranhao,3255
-12,2005,Maranhao,166
-12,2006,Maranhao,1052
+11,2010,Maranhao,4.005
+11,2011,Maranhao,2.261
+11,2012,Maranhao,2.01
+11,2013,Maranhao,2.529
+11,2014,Maranhao,3.869
+11,2015,Maranhao,4.35
+11,2016,Maranhao,3.982
+11,2017,Maranhao,2.3
+12,1998,Maranhao,1.399
+12,1999,Maranhao,1.001
+12,2000,Maranhao,1.461
+12,2001,Maranhao,1.296
+12,2002,Maranhao,2.165
+12,2003,Maranhao,2.424
+12,2004,Maranhao,3.255
+12,2005,Maranhao,1.66
+12,2006,Maranhao,1.052
 12,2007,Maranhao,800
-12,2008,Maranhao,1101
-12,2009,Maranhao,1768
-12,2010,Maranhao,1803
-12,2011,Maranhao,1629
-12,2012,Maranhao,1296
-12,2013,Maranhao,2692
-12,2014,Maranhao,24
-12,2015,Maranhao,3706
-12,2016,Maranhao,1577
+12,2008,Maranhao,1.101
+12,2009,Maranhao,1.768
+12,2010,Maranhao,1.803
+12,2011,Maranhao,1.629
+12,2012,Maranhao,1.296
+12,2013,Maranhao,2.692
+12,2014,Maranhao,2.4
+12,2015,Maranhao,3.706
+12,2016,Maranhao,1.577
 1,1998,Mato Grosso,0
 1,1999,Mato Grosso,39
 1,2000,Mato Grosso,44
@@ -2426,7 +2426,7 @@
 2,2013,Mato Grosso,375
 2,2014,Mato Grosso,199
 2,2015,Mato Grosso,542
-2,2016,Mato Grosso,105
+2,2016,Mato Grosso,1.05
 2,2017,Mato Grosso,337
 3,1998,Mato Grosso,0
 3,1999,Mato Grosso,18
@@ -2446,7 +2446,7 @@
 3,2013,Mato Grosso,563
 3,2014,Mato Grosso,655
 3,2015,Mato Grosso,705
-3,2016,Mato Grosso,1085
+3,2016,Mato Grosso,1.085
 3,2017,Mato Grosso,719
 4,1998,Mato Grosso,0
 4,1999,Mato Grosso,76
@@ -2466,155 +2466,155 @@
 4,2013,Mato Grosso,338
 4,2014,Mato Grosso,859
 4,2015,Mato Grosso,947
-4,2016,Mato Grosso,177
+4,2016,Mato Grosso,1.77
 4,2017,Mato Grosso,606
 5,1998,Mato Grosso,0
 5,1999,Mato Grosso,731
-5,2000,Mato Grosso,1194
-5,2001,Mato Grosso,1193
-5,2002,Mato Grosso,2528
+5,2000,Mato Grosso,1.194
+5,2001,Mato Grosso,1.193
+5,2002,Mato Grosso,2.528
 5,2003,Mato Grosso,942
-5,2004,Mato Grosso,2413
-5,2005,Mato Grosso,1641
+5,2004,Mato Grosso,2.413
+5,2005,Mato Grosso,1.641
 5,2006,Mato Grosso,269
 5,2007,Mato Grosso,359
 5,2008,Mato Grosso,119
 5,2009,Mato Grosso,516
-5,2010,Mato Grosso,1313
+5,2010,Mato Grosso,1.313
 5,2011,Mato Grosso,547
 5,2012,Mato Grosso,812
 5,2013,Mato Grosso,739
 5,2014,Mato Grosso,933
 5,2015,Mato Grosso,541
-5,2016,Mato Grosso,1081
+5,2016,Mato Grosso,1.081
 5,2017,Mato Grosso,845
-6,1998,Mato Grosso,2201
-6,1999,Mato Grosso,2201
-6,2000,Mato Grosso,4358
-6,2001,Mato Grosso,6665
-6,2002,Mato Grosso,7878
-6,2003,Mato Grosso,4313
-6,2004,Mato Grosso,9813
-6,2005,Mato Grosso,2294
+6,1998,Mato Grosso,2.201
+6,1999,Mato Grosso,2.201
+6,2000,Mato Grosso,4.358
+6,2001,Mato Grosso,6.665
+6,2002,Mato Grosso,7.878
+6,2003,Mato Grosso,4.313
+6,2004,Mato Grosso,9.813
+6,2005,Mato Grosso,2.294
 6,2006,Mato Grosso,856
-6,2007,Mato Grosso,1339
+6,2007,Mato Grosso,1.339
 6,2008,Mato Grosso,403
 6,2009,Mato Grosso,979
-6,2010,Mato Grosso,1025
+6,2010,Mato Grosso,1.025
 6,2011,Mato Grosso,974
-6,2012,Mato Grosso,1651
-6,2013,Mato Grosso,1213
-6,2014,Mato Grosso,1795
-6,2015,Mato Grosso,1402
-6,2016,Mato Grosso,1417
-6,2017,Mato Grosso,2041
-7,1998,Mato Grosso,3712
-7,1999,Mato Grosso,3926
-7,2000,Mato Grosso,1338
-7,2001,Mato Grosso,1555
-7,2002,Mato Grosso,5661
-7,2003,Mato Grosso,5435
-7,2004,Mato Grosso,11517
-7,2005,Mato Grosso,4172
-7,2006,Mato Grosso,1941
-7,2007,Mato Grosso,179
-7,2008,Mato Grosso,1117
-7,2009,Mato Grosso,1613
-7,2010,Mato Grosso,3442
-7,2011,Mato Grosso,1061
-7,2012,Mato Grosso,2008
-7,2013,Mato Grosso,163
-7,2014,Mato Grosso,2255
-7,2015,Mato Grosso,1533
-7,2016,Mato Grosso,3495
-7,2017,Mato Grosso,279
-8,1998,Mato Grosso,15406
-8,1999,Mato Grosso,18566
-8,2000,Mato Grosso,6063
-8,2001,Mato Grosso,7762
-8,2002,Mato Grosso,14086
-8,2003,Mato Grosso,11132
-8,2004,Mato Grosso,13603
-8,2005,Mato Grosso,1157
-8,2006,Mato Grosso,6218
-8,2007,Mato Grosso,14453
-8,2008,Mato Grosso,2875
-8,2009,Mato Grosso,225
-8,2010,Mato Grosso,14608
-8,2011,Mato Grosso,2628
-8,2012,Mato Grosso,6195
-8,2013,Mato Grosso,3568
-8,2014,Mato Grosso,7167
-8,2015,Mato Grosso,5112
-8,2016,Mato Grosso,6228
-8,2017,Mato Grosso,6229
-9,1998,Mato Grosso,10363
-9,1999,Mato Grosso,11729
-9,2000,Mato Grosso,6251
-9,2001,Mato Grosso,849
-9,2002,Mato Grosso,11034
-9,2003,Mato Grosso,1579
-9,2004,Mato Grosso,24994
-9,2005,Mato Grosso,20551
-9,2006,Mato Grosso,12661
-9,2007,Mato Grosso,25963
-9,2008,Mato Grosso,7965
-9,2009,Mato Grosso,3129
-9,2010,Mato Grosso,18366
-9,2011,Mato Grosso,6332
-9,2012,Mato Grosso,10344
-9,2013,Mato Grosso,5576
-9,2014,Mato Grosso,7081
-9,2015,Mato Grosso,11068
-9,2016,Mato Grosso,898
-9,2017,Mato Grosso,23945
-10,1998,Mato Grosso,2707
-10,1999,Mato Grosso,6109
-10,2000,Mato Grosso,6062
-10,2001,Mato Grosso,6543
-10,2002,Mato Grosso,9375
-10,2003,Mato Grosso,5341
-10,2004,Mato Grosso,9295
-10,2005,Mato Grosso,7765
-10,2006,Mato Grosso,2327
-10,2007,Mato Grosso,489
-10,2008,Mato Grosso,6326
-10,2009,Mato Grosso,2579
-10,2010,Mato Grosso,4465
-10,2011,Mato Grosso,201
-10,2012,Mato Grosso,2837
-10,2013,Mato Grosso,1986
-10,2014,Mato Grosso,5281
-10,2015,Mato Grosso,649
-10,2016,Mato Grosso,2749
-10,2017,Mato Grosso,48
+6,2012,Mato Grosso,1.651
+6,2013,Mato Grosso,1.213
+6,2014,Mato Grosso,1.795
+6,2015,Mato Grosso,1.402
+6,2016,Mato Grosso,1.417
+6,2017,Mato Grosso,2.041
+7,1998,Mato Grosso,3.712
+7,1999,Mato Grosso,3.926
+7,2000,Mato Grosso,1.338
+7,2001,Mato Grosso,1.555
+7,2002,Mato Grosso,5.661
+7,2003,Mato Grosso,5.435
+7,2004,Mato Grosso,11.517
+7,2005,Mato Grosso,4.172
+7,2006,Mato Grosso,1.941
+7,2007,Mato Grosso,1.79
+7,2008,Mato Grosso,1.117
+7,2009,Mato Grosso,1.613
+7,2010,Mato Grosso,3.442
+7,2011,Mato Grosso,1.061
+7,2012,Mato Grosso,2.008
+7,2013,Mato Grosso,1.63
+7,2014,Mato Grosso,2.255
+7,2015,Mato Grosso,1.533
+7,2016,Mato Grosso,3.495
+7,2017,Mato Grosso,2.79
+8,1998,Mato Grosso,15.406
+8,1999,Mato Grosso,18.566
+8,2000,Mato Grosso,6.063
+8,2001,Mato Grosso,7.762
+8,2002,Mato Grosso,14.086
+8,2003,Mato Grosso,11.132
+8,2004,Mato Grosso,13.603
+8,2005,Mato Grosso,11.57
+8,2006,Mato Grosso,6.218
+8,2007,Mato Grosso,14.453
+8,2008,Mato Grosso,2.875
+8,2009,Mato Grosso,2.25
+8,2010,Mato Grosso,14.608
+8,2011,Mato Grosso,2.628
+8,2012,Mato Grosso,6.195
+8,2013,Mato Grosso,3.568
+8,2014,Mato Grosso,7.167
+8,2015,Mato Grosso,5.112
+8,2016,Mato Grosso,6.228
+8,2017,Mato Grosso,6.229
+9,1998,Mato Grosso,10.363
+9,1999,Mato Grosso,11.729
+9,2000,Mato Grosso,6.251
+9,2001,Mato Grosso,8.49
+9,2002,Mato Grosso,11.034
+9,2003,Mato Grosso,15.79
+9,2004,Mato Grosso,24.994
+9,2005,Mato Grosso,20.551
+9,2006,Mato Grosso,12.661
+9,2007,Mato Grosso,25.963
+9,2008,Mato Grosso,7.965
+9,2009,Mato Grosso,3.129
+9,2010,Mato Grosso,18.366
+9,2011,Mato Grosso,6.332
+9,2012,Mato Grosso,10.344
+9,2013,Mato Grosso,5.576
+9,2014,Mato Grosso,7.081
+9,2015,Mato Grosso,11.068
+9,2016,Mato Grosso,8.98
+9,2017,Mato Grosso,23.945
+10,1998,Mato Grosso,2.707
+10,1999,Mato Grosso,6.109
+10,2000,Mato Grosso,6.062
+10,2001,Mato Grosso,6.543
+10,2002,Mato Grosso,9.375
+10,2003,Mato Grosso,5.341
+10,2004,Mato Grosso,9.295
+10,2005,Mato Grosso,7.765
+10,2006,Mato Grosso,2.327
+10,2007,Mato Grosso,4.89
+10,2008,Mato Grosso,6.326
+10,2009,Mato Grosso,2.579
+10,2010,Mato Grosso,4.465
+10,2011,Mato Grosso,2.01
+10,2012,Mato Grosso,2.837
+10,2013,Mato Grosso,1.986
+10,2014,Mato Grosso,5.281
+10,2015,Mato Grosso,6.49
+10,2016,Mato Grosso,2.749
+10,2017,Mato Grosso,4.8
 11,1998,Mato Grosso,182
 11,1999,Mato Grosso,842
 11,2000,Mato Grosso,502
 11,2001,Mato Grosso,373
-11,2002,Mato Grosso,2905
-11,2003,Mato Grosso,2097
-11,2004,Mato Grosso,2405
-11,2005,Mato Grosso,1368
-11,2006,Mato Grosso,1031
+11,2002,Mato Grosso,2.905
+11,2003,Mato Grosso,2.097
+11,2004,Mato Grosso,2.405
+11,2005,Mato Grosso,1.368
+11,2006,Mato Grosso,1.031
 11,2007,Mato Grosso,299
 11,2008,Mato Grosso,190
 11,2009,Mato Grosso,588
 11,2010,Mato Grosso,768
-11,2011,Mato Grosso,1103
+11,2011,Mato Grosso,1.103
 11,2012,Mato Grosso,375
-11,2013,Mato Grosso,1064
-11,2014,Mato Grosso,1018
-11,2015,Mato Grosso,193
+11,2013,Mato Grosso,1.064
+11,2014,Mato Grosso,1.018
+11,2015,Mato Grosso,1.93
 11,2016,Mato Grosso,918
 11,2017,Mato Grosso,813
 12,1998,Mato Grosso,76
 12,1999,Mato Grosso,47
 12,2000,Mato Grosso,98
 12,2001,Mato Grosso,37
-12,2002,Mato Grosso,1157
-12,2003,Mato Grosso,1622
-12,2004,Mato Grosso,1217
+12,2002,Mato Grosso,1.157
+12,2003,Mato Grosso,1.622
+12,2004,Mato Grosso,1.217
 12,2005,Mato Grosso,246
 12,2006,Mato Grosso,23
 12,2007,Mato Grosso,81
@@ -2625,7 +2625,7 @@
 12,2012,Mato Grosso,492
 12,2013,Mato Grosso,447
 12,2014,Mato Grosso,466
-12,2015,Mato Grosso,1777
+12,2015,Mato Grosso,1.777
 12,2016,Mato Grosso,425
 1,1998,Mato Grosso do Sul,0
 1,1999,Mato Grosso do Sul,239
@@ -2748,7 +2748,7 @@
 6,2016,Mato Grosso do Sul,120
 6,2017,Mato Grosso do Sul,175
 7,1998,Mato Grosso do Sul,360
-7,1999,Mato Grosso do Sul,1297
+7,1999,Mato Grosso do Sul,1.297
 7,2000,Mato Grosso do Sul,160
 7,2001,Mato Grosso do Sul,591
 7,2002,Mato Grosso do Sul,935
@@ -2766,52 +2766,52 @@
 7,2014,Mato Grosso do Sul,193
 7,2015,Mato Grosso do Sul,371
 7,2016,Mato Grosso do Sul,687
-7,2017,Mato Grosso do Sul,105
+7,2017,Mato Grosso do Sul,1.05
 8,1998,Mato Grosso do Sul,228
-8,1999,Mato Grosso do Sul,4355
+8,1999,Mato Grosso do Sul,4.355
 8,2000,Mato Grosso do Sul,530
-8,2001,Mato Grosso do Sul,2484
-8,2002,Mato Grosso do Sul,3984
+8,2001,Mato Grosso do Sul,2.484
+8,2002,Mato Grosso do Sul,3.984
 8,2003,Mato Grosso do Sul,953
-8,2004,Mato Grosso do Sul,1408
-8,2005,Mato Grosso do Sul,4484
-8,2006,Mato Grosso do Sul,1129
-8,2007,Mato Grosso do Sul,1823
+8,2004,Mato Grosso do Sul,1.408
+8,2005,Mato Grosso do Sul,4.484
+8,2006,Mato Grosso do Sul,1.129
+8,2007,Mato Grosso do Sul,1.823
 8,2008,Mato Grosso do Sul,456
 8,2009,Mato Grosso do Sul,816
-8,2010,Mato Grosso do Sul,1721
+8,2010,Mato Grosso do Sul,1.721
 8,2011,Mato Grosso do Sul,552
-8,2012,Mato Grosso do Sul,2951
+8,2012,Mato Grosso do Sul,2.951
 8,2013,Mato Grosso do Sul,677
 8,2014,Mato Grosso do Sul,312
-8,2015,Mato Grosso do Sul,1293
-8,2016,Mato Grosso do Sul,1481
-8,2017,Mato Grosso do Sul,1488
+8,2015,Mato Grosso do Sul,1.293
+8,2016,Mato Grosso do Sul,1.481
+8,2017,Mato Grosso do Sul,1.488
 9,1998,Mato Grosso do Sul,457
-9,1999,Mato Grosso do Sul,2969
+9,1999,Mato Grosso do Sul,2.969
 9,2000,Mato Grosso do Sul,510
-9,2001,Mato Grosso do Sul,1383
-9,2002,Mato Grosso do Sul,2252
-9,2003,Mato Grosso do Sul,1124
-9,2004,Mato Grosso do Sul,2511
-9,2005,Mato Grosso do Sul,187
-9,2006,Mato Grosso do Sul,1078
-9,2007,Mato Grosso do Sul,4446
-9,2008,Mato Grosso do Sul,162
-9,2009,Mato Grosso do Sul,1146
-9,2010,Mato Grosso do Sul,1505
-9,2011,Mato Grosso do Sul,1072
-9,2012,Mato Grosso do Sul,2264
-9,2013,Mato Grosso do Sul,1074
+9,2001,Mato Grosso do Sul,1.383
+9,2002,Mato Grosso do Sul,2.252
+9,2003,Mato Grosso do Sul,1.124
+9,2004,Mato Grosso do Sul,2.511
+9,2005,Mato Grosso do Sul,1.87
+9,2006,Mato Grosso do Sul,1.078
+9,2007,Mato Grosso do Sul,4.446
+9,2008,Mato Grosso do Sul,1.62
+9,2009,Mato Grosso do Sul,1.146
+9,2010,Mato Grosso do Sul,1.505
+9,2011,Mato Grosso do Sul,1.072
+9,2012,Mato Grosso do Sul,2.264
+9,2013,Mato Grosso do Sul,1.074
 9,2014,Mato Grosso do Sul,365
-9,2015,Mato Grosso do Sul,1482
-9,2016,Mato Grosso do Sul,2383
-9,2017,Mato Grosso do Sul,2984
+9,2015,Mato Grosso do Sul,1.482
+9,2016,Mato Grosso do Sul,2.383
+9,2017,Mato Grosso do Sul,2.984
 10,1998,Mato Grosso do Sul,576
-10,1999,Mato Grosso do Sul,2053
+10,1999,Mato Grosso do Sul,2.053
 10,2000,Mato Grosso do Sul,657
 10,2001,Mato Grosso do Sul,563
-10,2002,Mato Grosso do Sul,2173
+10,2002,Mato Grosso do Sul,2.173
 10,2003,Mato Grosso do Sul,541
 10,2004,Mato Grosso do Sul,960
 10,2005,Mato Grosso do Sul,647
@@ -2825,13 +2825,13 @@
 10,2013,Mato Grosso do Sul,378
 10,2014,Mato Grosso do Sul,581
 10,2015,Mato Grosso do Sul,507
-10,2016,Mato Grosso do Sul,12
+10,2016,Mato Grosso do Sul,1.2
 10,2017,Mato Grosso do Sul,685
 11,1998,Mato Grosso do Sul,306
-11,1999,Mato Grosso do Sul,1194
+11,1999,Mato Grosso do Sul,1.194
 11,2000,Mato Grosso do Sul,274
 11,2001,Mato Grosso do Sul,220
-11,2002,Mato Grosso do Sul,147
+11,2002,Mato Grosso do Sul,1.47
 11,2003,Mato Grosso do Sul,380
 11,2004,Mato Grosso do Sul,208
 11,2005,Mato Grosso do Sul,159
@@ -3004,68 +3004,68 @@
 7,2013,Minas Gerais,462
 7,2014,Minas Gerais,559
 7,2015,Minas Gerais,288
-7,2016,Minas Gerais,1004
+7,2016,Minas Gerais,1.004
 7,2017,Minas Gerais,610
 8,1998,Minas Gerais,875
-8,1999,Minas Gerais,119
+8,1999,Minas Gerais,1.19
 8,2000,Minas Gerais,769
 8,2001,Minas Gerais,858
-8,2002,Minas Gerais,2041
-8,2003,Minas Gerais,1955
-8,2004,Minas Gerais,1642
-8,2005,Minas Gerais,1029
+8,2002,Minas Gerais,2.041
+8,2003,Minas Gerais,1.955
+8,2004,Minas Gerais,1.642
+8,2005,Minas Gerais,1.029
 8,2006,Minas Gerais,959
-8,2007,Minas Gerais,2975
+8,2007,Minas Gerais,2.975
 8,2008,Minas Gerais,605
 8,2009,Minas Gerais,685
-8,2010,Minas Gerais,3353
-8,2011,Minas Gerais,2742
+8,2010,Minas Gerais,3.353
+8,2011,Minas Gerais,2.742
 8,2012,Minas Gerais,901
 8,2013,Minas Gerais,911
-8,2014,Minas Gerais,1952
-8,2015,Minas Gerais,1059
-8,2016,Minas Gerais,1433
-8,2017,Minas Gerais,2142
-9,1998,Minas Gerais,1981
-9,1999,Minas Gerais,2686
-9,2000,Minas Gerais,108
-9,2001,Minas Gerais,1597
-9,2002,Minas Gerais,31
-9,2003,Minas Gerais,7091
-9,2004,Minas Gerais,4339
-9,2005,Minas Gerais,2047
-9,2006,Minas Gerais,278
-9,2007,Minas Gerais,5088
-9,2008,Minas Gerais,2552
-9,2009,Minas Gerais,131
-9,2010,Minas Gerais,5059
-9,2011,Minas Gerais,5978
-9,2012,Minas Gerais,3219
-9,2013,Minas Gerais,1656
-9,2014,Minas Gerais,3454
-9,2015,Minas Gerais,3088
-9,2016,Minas Gerais,2093
-9,2017,Minas Gerais,4697
-10,1998,Minas Gerais,1093
-10,1999,Minas Gerais,1363
-10,2000,Minas Gerais,1954
+8,2014,Minas Gerais,1.952
+8,2015,Minas Gerais,1.059
+8,2016,Minas Gerais,1.433
+8,2017,Minas Gerais,2.142
+9,1998,Minas Gerais,1.981
+9,1999,Minas Gerais,2.686
+9,2000,Minas Gerais,1.08
+9,2001,Minas Gerais,1.597
+9,2002,Minas Gerais,3.1
+9,2003,Minas Gerais,7.091
+9,2004,Minas Gerais,4.339
+9,2005,Minas Gerais,2.047
+9,2006,Minas Gerais,2.78
+9,2007,Minas Gerais,5.088
+9,2008,Minas Gerais,2.552
+9,2009,Minas Gerais,1.31
+9,2010,Minas Gerais,5.059
+9,2011,Minas Gerais,5.978
+9,2012,Minas Gerais,3.219
+9,2013,Minas Gerais,1.656
+9,2014,Minas Gerais,3.454
+9,2015,Minas Gerais,3.088
+9,2016,Minas Gerais,2.093
+9,2017,Minas Gerais,4.697
+10,1998,Minas Gerais,1.093
+10,1999,Minas Gerais,1.363
+10,2000,Minas Gerais,1.954
 10,2001,Minas Gerais,528
-10,2002,Minas Gerais,4788
-10,2003,Minas Gerais,5391
-10,2004,Minas Gerais,2736
-10,2005,Minas Gerais,6546
+10,2002,Minas Gerais,4.788
+10,2003,Minas Gerais,5.391
+10,2004,Minas Gerais,2.736
+10,2005,Minas Gerais,6.546
 10,2006,Minas Gerais,616
-10,2007,Minas Gerais,3467
-10,2008,Minas Gerais,3787
-10,2009,Minas Gerais,1013
-10,2010,Minas Gerais,2048
-10,2011,Minas Gerais,1206
-10,2012,Minas Gerais,397
-10,2013,Minas Gerais,1221
-10,2014,Minas Gerais,4735
-10,2015,Minas Gerais,3708
+10,2007,Minas Gerais,3.467
+10,2008,Minas Gerais,3.787
+10,2009,Minas Gerais,1.013
+10,2010,Minas Gerais,2.048
+10,2011,Minas Gerais,1.206
+10,2012,Minas Gerais,3.97
+10,2013,Minas Gerais,1.221
+10,2014,Minas Gerais,4.735
+10,2015,Minas Gerais,3.708
 10,2016,Minas Gerais,948
-10,2017,Minas Gerais,3062
+10,2017,Minas Gerais,3.062
 11,1998,Minas Gerais,32
 11,1999,Minas Gerais,271
 11,2000,Minas Gerais,43
@@ -3075,7 +3075,7 @@
 11,2004,Minas Gerais,914
 11,2005,Minas Gerais,422
 11,2006,Minas Gerais,59
-11,2007,Minas Gerais,1305
+11,2007,Minas Gerais,1.305
 11,2008,Minas Gerais,892
 11,2009,Minas Gerais,246
 11,2010,Minas Gerais,82
@@ -3083,7 +3083,7 @@
 11,2012,Minas Gerais,220
 11,2013,Minas Gerais,277
 11,2014,Minas Gerais,398
-11,2015,Minas Gerais,1453
+11,2015,Minas Gerais,1.453
 11,2016,Minas Gerais,126
 11,2017,Minas Gerais,136
 12,1998,Minas Gerais,21
@@ -3112,7 +3112,7 @@
 1,2002,Para,144
 1,2003,Para,900
 1,2004,Para,579
-1,2005,Para,1768
+1,2005,Para,1.768
 1,2006,Para,403
 1,2007,Para,467
 1,2008,Para,131
@@ -3123,7 +3123,7 @@
 1,2013,Para,167
 1,2014,Para,251
 1,2015,Para,725
-1,2016,Para,1322
+1,2016,Para,1.322
 1,2017,Para,219
 2,1998,Para,0
 2,1999,Para,285
@@ -3230,120 +3230,120 @@
 7,2000,Para,426
 7,2001,Para,708
 7,2002,Para,772
-7,2003,Para,1571
-7,2004,Para,4436
-7,2005,Para,4364
+7,2003,Para,1.571
+7,2004,Para,4.436
+7,2005,Para,4.364
 7,2006,Para,615
 7,2007,Para,476
 7,2008,Para,971
 7,2009,Para,397
-7,2010,Para,1432
+7,2010,Para,1.432
 7,2011,Para,632
 7,2012,Para,661
 7,2013,Para,447
 7,2014,Para,825
 7,2015,Para,906
-7,2016,Para,1579
-7,2017,Para,4985
-8,1998,Para,6815
-8,1999,Para,6178
-8,2000,Para,5484
-8,2001,Para,9043
-8,2002,Para,15664
-8,2003,Para,6255
-8,2004,Para,12812
-8,2005,Para,13055
-8,2006,Para,7575
-8,2007,Para,14352
-8,2008,Para,4435
-8,2009,Para,3859
-8,2010,Para,1813
-8,2011,Para,2195
-8,2012,Para,6964
-8,2013,Para,2161
-8,2014,Para,8555
-8,2015,Para,7913
-8,2016,Para,4863
-8,2017,Para,11962
-9,1998,Para,6237
-9,1999,Para,4419
-9,2000,Para,2569
-9,2001,Para,6139
-9,2002,Para,5609
-9,2003,Para,8447
-9,2004,Para,9471
-9,2005,Para,9032
-9,2006,Para,8372
-9,2007,Para,1459
-9,2008,Para,6294
-9,2009,Para,6051
-9,2010,Para,1081
-9,2011,Para,5185
-9,2012,Para,687
-9,2013,Para,336
-9,2014,Para,6787
-9,2015,Para,11068
-9,2016,Para,3953
-9,2017,Para,25004
-10,1998,Para,3665
-10,1999,Para,5026
-10,2000,Para,4313
-10,2001,Para,5096
-10,2002,Para,5189
-10,2003,Para,3803
-10,2004,Para,4726
-10,2005,Para,5083
-10,2006,Para,5964
-10,2007,Para,2504
-10,2008,Para,6653
-10,2009,Para,6342
-10,2010,Para,3843
-10,2011,Para,3141
-10,2012,Para,3714
-10,2013,Para,4921
-10,2014,Para,6448
-10,2015,Para,7781
-10,2016,Para,5281
-10,2017,Para,7628
-11,1998,Para,1861
-11,1999,Para,2682
-11,2000,Para,3366
-11,2001,Para,4938
-11,2002,Para,7996
-11,2003,Para,6195
-11,2004,Para,9842
-11,2005,Para,4968
-11,2006,Para,2883
-11,2007,Para,289
-11,2008,Para,2403
-11,2009,Para,10012
-11,2010,Para,4417
-11,2011,Para,3043
-11,2012,Para,6156
-11,2013,Para,3688
-11,2014,Para,7767
-11,2015,Para,9643
-11,2016,Para,7879
-11,2017,Para,9079
-12,1998,Para,1008
+7,2016,Para,1.579
+7,2017,Para,4.985
+8,1998,Para,6.815
+8,1999,Para,6.178
+8,2000,Para,5.484
+8,2001,Para,9.043
+8,2002,Para,15.664
+8,2003,Para,6.255
+8,2004,Para,12.812
+8,2005,Para,13.055
+8,2006,Para,7.575
+8,2007,Para,14.352
+8,2008,Para,4.435
+8,2009,Para,3.859
+8,2010,Para,18.13
+8,2011,Para,2.195
+8,2012,Para,6.964
+8,2013,Para,2.161
+8,2014,Para,8.555
+8,2015,Para,7.913
+8,2016,Para,4.863
+8,2017,Para,11.962
+9,1998,Para,6.237
+9,1999,Para,4.419
+9,2000,Para,2.569
+9,2001,Para,6.139
+9,2002,Para,5.609
+9,2003,Para,8.447
+9,2004,Para,9.471
+9,2005,Para,9.032
+9,2006,Para,8.372
+9,2007,Para,14.59
+9,2008,Para,6.294
+9,2009,Para,6.051
+9,2010,Para,10.81
+9,2011,Para,5.185
+9,2012,Para,6.87
+9,2013,Para,3.36
+9,2014,Para,6.787
+9,2015,Para,11.068
+9,2016,Para,3.953
+9,2017,Para,25.004
+10,1998,Para,3.665
+10,1999,Para,5.026
+10,2000,Para,4.313
+10,2001,Para,5.096
+10,2002,Para,5.189
+10,2003,Para,3.803
+10,2004,Para,4.726
+10,2005,Para,5.083
+10,2006,Para,5.964
+10,2007,Para,2.504
+10,2008,Para,6.653
+10,2009,Para,6.342
+10,2010,Para,3.843
+10,2011,Para,3.141
+10,2012,Para,3.714
+10,2013,Para,4.921
+10,2014,Para,6.448
+10,2015,Para,7.781
+10,2016,Para,5.281
+10,2017,Para,7.628
+11,1998,Para,1.861
+11,1999,Para,2.682
+11,2000,Para,3.366
+11,2001,Para,4.938
+11,2002,Para,7.996
+11,2003,Para,6.195
+11,2004,Para,9.842
+11,2005,Para,4.968
+11,2006,Para,2.883
+11,2007,Para,2.89
+11,2008,Para,2.403
+11,2009,Para,10.012
+11,2010,Para,4.417
+11,2011,Para,3.043
+11,2012,Para,6.156
+11,2013,Para,3.688
+11,2014,Para,7.767
+11,2015,Para,9.643
+11,2016,Para,7.879
+11,2017,Para,9.079
+12,1998,Para,1.008
 12,1999,Para,766
-12,2000,Para,1698
-12,2001,Para,2564
-12,2002,Para,3118
-12,2003,Para,4787
-12,2004,Para,5508
-12,2005,Para,1495
-12,2006,Para,1417
+12,2000,Para,1.698
+12,2001,Para,2.564
+12,2002,Para,3.118
+12,2003,Para,4.787
+12,2004,Para,5.508
+12,2005,Para,1.495
+12,2006,Para,1.417
 12,2007,Para,689
 12,2008,Para,684
-12,2009,Para,2832
-12,2010,Para,1612
-12,2011,Para,3218
-12,2012,Para,1812
-12,2013,Para,5514
-12,2014,Para,4828
-12,2015,Para,661
-12,2016,Para,33
+12,2009,Para,2.832
+12,2010,Para,1.612
+12,2011,Para,3.218
+12,2012,Para,1.812
+12,2013,Para,5.514
+12,2014,Para,4.828
+12,2015,Para,6.61
+12,2016,Para,3.3
 1,1998,Paraiba,0
 1,1999,Paraiba,26
 1,2000,Paraiba,0
@@ -3727,9 +3727,9 @@
 8,1999,Parana,938
 8,2000,Parana,849
 8,2001,Parana,342
-8,2002,Parana,1593
-8,2003,Parana,1896
-8,2004,Parana,1237
+8,2002,Parana,1.593
+8,2003,Parana,1.896
+8,2004,Parana,1.237
 8,2005,Parana,800
 8,2006,Parana,844
 8,2007,Parana,580
@@ -3741,15 +3741,15 @@
 8,2013,Parana,481
 8,2014,Parana,646
 8,2015,Parana,651
-8,2016,Parana,101
+8,2016,Parana,1.01
 8,2017,Parana,987
 9,1998,Parana,61
 9,1999,Parana,878
 9,2000,Parana,381
 9,2001,Parana,258
-9,2002,Parana,1071
-9,2003,Parana,2446
-9,2004,Parana,136
+9,2002,Parana,1.071
+9,2003,Parana,2.446
+9,2004,Parana,1.36
 9,2005,Parana,386
 9,2006,Parana,866
 9,2007,Parana,960
@@ -3761,14 +3761,14 @@
 9,2013,Parana,476
 9,2014,Parana,443
 9,2015,Parana,599
-9,2016,Parana,1371
-9,2017,Parana,1706
+9,2016,Parana,1.371
+9,2017,Parana,1.706
 10,1998,Parana,61
 10,1999,Parana,452
 10,2000,Parana,658
 10,2001,Parana,209
 10,2002,Parana,399
-10,2003,Parana,1228
+10,2003,Parana,1.228
 10,2004,Parana,666
 10,2005,Parana,157
 10,2006,Parana,327
@@ -4193,93 +4193,93 @@
 7,2007,Piaui,919
 7,2008,Piaui,97
 7,2009,Piaui,302
-7,2010,Piaui,1696
+7,2010,Piaui,1.696
 7,2011,Piaui,864
-7,2012,Piaui,1755
+7,2012,Piaui,1.755
 7,2013,Piaui,361
-7,2014,Piaui,1177
+7,2014,Piaui,1.177
 7,2015,Piaui,690
 7,2016,Piaui,754
 7,2017,Piaui,643
 8,1998,Piaui,711
 8,1999,Piaui,499
 8,2000,Piaui,415
-8,2001,Piaui,1133
-8,2002,Piaui,228
+8,2001,Piaui,1.133
+8,2002,Piaui,2.28
 8,2003,Piaui,864
-8,2004,Piaui,1002
+8,2004,Piaui,1.002
 8,2005,Piaui,943
 8,2006,Piaui,911
-8,2007,Piaui,3551
+8,2007,Piaui,3.551
 8,2008,Piaui,290
 8,2009,Piaui,790
-8,2010,Piaui,4035
-8,2011,Piaui,1958
-8,2012,Piaui,3614
-8,2013,Piaui,1015
-8,2014,Piaui,2265
-8,2015,Piaui,2057
-8,2016,Piaui,1647
-8,2017,Piaui,1572
-9,1998,Piaui,1991
+8,2010,Piaui,4.035
+8,2011,Piaui,1.958
+8,2012,Piaui,3.614
+8,2013,Piaui,1.015
+8,2014,Piaui,2.265
+8,2015,Piaui,2.057
+8,2016,Piaui,1.647
+8,2017,Piaui,1.572
+9,1998,Piaui,1.991
 9,1999,Piaui,872
-9,2000,Piaui,1099
-9,2001,Piaui,2401
-9,2002,Piaui,2475
-9,2003,Piaui,3399
-9,2004,Piaui,2662
-9,2005,Piaui,3136
-9,2006,Piaui,1618
-9,2007,Piaui,4078
-9,2008,Piaui,1472
-9,2009,Piaui,1709
-9,2010,Piaui,5392
-9,2011,Piaui,4402
-9,2012,Piaui,4479
-9,2013,Piaui,2311
-9,2014,Piaui,2536
-9,2015,Piaui,5828
-9,2016,Piaui,1394
-9,2017,Piaui,3422
-10,1998,Piaui,2586
-10,1999,Piaui,1438
-10,2000,Piaui,2558
-10,2001,Piaui,3742
-10,2002,Piaui,2757
-10,2003,Piaui,2332
-10,2004,Piaui,2144
-10,2005,Piaui,3263
-10,2006,Piaui,1443
-10,2007,Piaui,2331
-10,2008,Piaui,183
+9,2000,Piaui,1.099
+9,2001,Piaui,2.401
+9,2002,Piaui,2.475
+9,2003,Piaui,3.399
+9,2004,Piaui,2.662
+9,2005,Piaui,3.136
+9,2006,Piaui,1.618
+9,2007,Piaui,4.078
+9,2008,Piaui,1.472
+9,2009,Piaui,1.709
+9,2010,Piaui,5.392
+9,2011,Piaui,4.402
+9,2012,Piaui,4.479
+9,2013,Piaui,2.311
+9,2014,Piaui,2.536
+9,2015,Piaui,5.828
+9,2016,Piaui,1.394
+9,2017,Piaui,3.422
+10,1998,Piaui,2.586
+10,1999,Piaui,1.438
+10,2000,Piaui,2.558
+10,2001,Piaui,3.742
+10,2002,Piaui,2.757
+10,2003,Piaui,2.332
+10,2004,Piaui,2.144
+10,2005,Piaui,3.263
+10,2006,Piaui,1.443
+10,2007,Piaui,2.331
+10,2008,Piaui,1.83
 10,2009,Piaui,913
-10,2010,Piaui,3863
-10,2011,Piaui,1484
-10,2012,Piaui,2506
-10,2013,Piaui,1269
-10,2014,Piaui,1788
-10,2015,Piaui,4068
-10,2016,Piaui,2598
-10,2017,Piaui,3004
+10,2010,Piaui,3.863
+10,2011,Piaui,1.484
+10,2012,Piaui,2.506
+10,2013,Piaui,1.269
+10,2014,Piaui,1.788
+10,2015,Piaui,4.068
+10,2016,Piaui,2.598
+10,2017,Piaui,3.004
 11,1998,Piaui,424
 11,1999,Piaui,334
 11,2000,Piaui,450
-11,2001,Piaui,1484
-11,2002,Piaui,1174
-11,2003,Piaui,1248
-11,2004,Piaui,1798
-11,2005,Piaui,1599
+11,2001,Piaui,1.484
+11,2002,Piaui,1.174
+11,2003,Piaui,1.248
+11,2004,Piaui,1.798
+11,2005,Piaui,1.599
 11,2006,Piaui,740
 11,2007,Piaui,939
 11,2008,Piaui,594
-11,2009,Piaui,1336
-11,2010,Piaui,1417
+11,2009,Piaui,1.336
+11,2010,Piaui,1.417
 11,2011,Piaui,825
 11,2012,Piaui,447
 11,2013,Piaui,640
 11,2014,Piaui,717
 11,2015,Piaui,897
-11,2016,Piaui,1126
+11,2016,Piaui,1.126
 11,2017,Piaui,449
 12,1998,Piaui,119
 12,1999,Piaui,74
@@ -4923,20 +4923,20 @@
 8,2000,Rio Grande do Sul,18
 8,2001,Rio Grande do Sul,36
 8,2002,Rio Grande do Sul,824
-8,2003,Rio Grande do Sul,1419
+8,2003,Rio Grande do Sul,1.419
 8,2004,Rio Grande do Sul,403
 8,2005,Rio Grande do Sul,120
 8,2006,Rio Grande do Sul,642
 8,2007,Rio Grande do Sul,258
 8,2008,Rio Grande do Sul,56
-8,2009,Rio Grande do Sul,1057
+8,2009,Rio Grande do Sul,1.057
 8,2010,Rio Grande do Sul,267
 8,2011,Rio Grande do Sul,116
 8,2012,Rio Grande do Sul,410
 8,2013,Rio Grande do Sul,156
-8,2014,Rio Grande do Sul,1168
+8,2014,Rio Grande do Sul,1.168
 8,2015,Rio Grande do Sul,414
-8,2016,Rio Grande do Sul,1111
+8,2016,Rio Grande do Sul,1.111
 8,2017,Rio Grande do Sul,819
 9,1998,Rio Grande do Sul,60
 9,1999,Rio Grande do Sul,19
@@ -4999,7 +4999,7 @@
 11,2016,Rio Grande do Sul,105
 11,2017,Rio Grande do Sul,137
 12,1998,Rio Grande do Sul,605
-12,1999,Rio Grande do Sul,111
+12,1999,Rio Grande do Sul,1.11
 12,2000,Rio Grande do Sul,80
 12,2001,Rio Grande do Sul,80
 12,2002,Rio Grande do Sul,45
@@ -5143,7 +5143,7 @@
 7,2001,Rondonia,74
 7,2002,Rondonia,539
 7,2003,Rondonia,516
-7,2004,Rondonia,1233
+7,2004,Rondonia,1.233
 7,2005,Rondonia,798
 7,2006,Rondonia,314
 7,2007,Rondonia,187
@@ -5156,67 +5156,67 @@
 7,2014,Rondonia,192
 7,2015,Rondonia,423
 7,2016,Rondonia,969
-7,2017,Rondonia,128
-8,1998,Rondonia,2254
-8,1999,Rondonia,1976
-8,2000,Rondonia,2197
-8,2001,Rondonia,2132
-8,2002,Rondonia,3465
-8,2003,Rondonia,706
-8,2004,Rondonia,6893
-8,2005,Rondonia,6672
-8,2006,Rondonia,3124
-8,2007,Rondonia,4786
-8,2008,Rondonia,1251
+7,2017,Rondonia,1.28
+8,1998,Rondonia,2.254
+8,1999,Rondonia,1.976
+8,2000,Rondonia,2.197
+8,2001,Rondonia,2.132
+8,2002,Rondonia,3.465
+8,2003,Rondonia,7.06
+8,2004,Rondonia,6.893
+8,2005,Rondonia,6.672
+8,2006,Rondonia,3.124
+8,2007,Rondonia,4.786
+8,2008,Rondonia,1.251
 8,2009,Rondonia,484
-8,2010,Rondonia,4388
-8,2011,Rondonia,1161
-8,2012,Rondonia,2209
+8,2010,Rondonia,4.388
+8,2011,Rondonia,1.161
+8,2012,Rondonia,2.209
 8,2013,Rondonia,885
-8,2014,Rondonia,3038
-8,2015,Rondonia,3762
-8,2016,Rondonia,3675
-8,2017,Rondonia,4287
-9,1998,Rondonia,3753
-9,1999,Rondonia,3062
-9,2000,Rondonia,2438
-9,2001,Rondonia,1927
-9,2002,Rondonia,7067
-9,2003,Rondonia,689
-9,2004,Rondonia,1305
-9,2005,Rondonia,13972
-9,2006,Rondonia,992
-9,2007,Rondonia,6832
-9,2008,Rondonia,3726
-9,2009,Rondonia,1869
-9,2010,Rondonia,4893
-9,2011,Rondonia,1782
-9,2012,Rondonia,2471
-9,2013,Rondonia,1776
-9,2014,Rondonia,28
-9,2015,Rondonia,6129
-9,2016,Rondonia,4208
-9,2017,Rondonia,5638
+8,2014,Rondonia,3.038
+8,2015,Rondonia,3.762
+8,2016,Rondonia,3.675
+8,2017,Rondonia,4.287
+9,1998,Rondonia,3.753
+9,1999,Rondonia,3.062
+9,2000,Rondonia,2.438
+9,2001,Rondonia,1.927
+9,2002,Rondonia,7.067
+9,2003,Rondonia,6.89
+9,2004,Rondonia,13.05
+9,2005,Rondonia,13.972
+9,2006,Rondonia,9.92
+9,2007,Rondonia,6.832
+9,2008,Rondonia,3.726
+9,2009,Rondonia,1.869
+9,2010,Rondonia,4.893
+9,2011,Rondonia,1.782
+9,2012,Rondonia,2.471
+9,2013,Rondonia,1.776
+9,2014,Rondonia,2.8
+9,2015,Rondonia,6.129
+9,2016,Rondonia,4.208
+9,2017,Rondonia,5.638
 10,1998,Rondonia,483
-10,1999,Rondonia,1884
+10,1999,Rondonia,1.884
 10,2000,Rondonia,644
 10,2001,Rondonia,796
-10,2002,Rondonia,3554
-10,2003,Rondonia,4962
-10,2004,Rondonia,3094
-10,2005,Rondonia,2559
-10,2006,Rondonia,1148
-10,2007,Rondonia,2023
-10,2008,Rondonia,1482
-10,2009,Rondonia,1444
-10,2010,Rondonia,1307
+10,2002,Rondonia,3.554
+10,2003,Rondonia,4.962
+10,2004,Rondonia,3.094
+10,2005,Rondonia,2.559
+10,2006,Rondonia,1.148
+10,2007,Rondonia,2.023
+10,2008,Rondonia,1.482
+10,2009,Rondonia,1.444
+10,2010,Rondonia,1.307
 10,2011,Rondonia,822
-10,2012,Rondonia,1229
+10,2012,Rondonia,1.229
 10,2013,Rondonia,555
-10,2014,Rondonia,1063
-10,2015,Rondonia,2598
-10,2016,Rondonia,1844
-10,2017,Rondonia,219
+10,2014,Rondonia,1.063
+10,2015,Rondonia,2.598
+10,2016,Rondonia,1.844
+10,2017,Rondonia,2.19
 11,1998,Rondonia,3
 11,1999,Rondonia,41
 11,2000,Rondonia,13
@@ -5234,7 +5234,7 @@
 11,2012,Rondonia,174
 11,2013,Rondonia,108
 11,2014,Rondonia,202
-11,2015,Rondonia,1002
+11,2015,Rondonia,1.002
 11,2016,Rondonia,401
 11,2017,Rondonia,372
 12,1998,Rondonia,33
@@ -5274,7 +5274,7 @@
 1,2013,Roraima,397
 1,2014,Roraima,355
 1,2015,Roraima,330
-1,2016,Roraima,1754
+1,2016,Roraima,1.754
 1,2017,Roraima,108
 2,1998,Roraima,0
 2,1999,Roraima,20
@@ -5299,9 +5299,9 @@
 3,1998,Roraima,0
 3,1999,Roraima,98
 3,2000,Roraima,125
-3,2001,Roraima,1108
+3,2001,Roraima,1.108
 3,2002,Roraima,820
-3,2003,Roraima,1131
+3,2003,Roraima,1.131
 3,2004,Roraima,276
 3,2005,Roraima,244
 3,2006,Roraima,385
@@ -5314,7 +5314,7 @@
 3,2013,Roraima,179
 3,2014,Roraima,494
 3,2015,Roraima,163
-3,2016,Roraima,1081
+3,2016,Roraima,1.081
 3,2017,Roraima,216
 4,1998,Roraima,0
 4,1999,Roraima,16
@@ -5640,7 +5640,7 @@
 8,2000,Santa Catarina,69
 8,2001,Santa Catarina,24
 8,2002,Santa Catarina,702
-8,2003,Santa Catarina,1513
+8,2003,Santa Catarina,1.513
 8,2004,Santa Catarina,728
 8,2005,Santa Catarina,391
 8,2006,Santa Catarina,728
@@ -5660,7 +5660,7 @@
 9,2000,Santa Catarina,36
 9,2001,Santa Catarina,18
 9,2002,Santa Catarina,416
-9,2003,Santa Catarina,1339
+9,2003,Santa Catarina,1.339
 9,2004,Santa Catarina,755
 9,2005,Santa Catarina,116
 9,2006,Santa Catarina,530
@@ -5875,7 +5875,7 @@
 7,2016,Sao Paulo,687
 7,2017,Sao Paulo,802
 8,1998,Sao Paulo,581
-8,1999,Sao Paulo,1211
+8,1999,Sao Paulo,1.211
 8,2000,Sao Paulo,915
 8,2001,Sao Paulo,595
 8,2002,Sao Paulo,719
@@ -5886,11 +5886,11 @@
 8,2007,Sao Paulo,470
 8,2008,Sao Paulo,153
 8,2009,Sao Paulo,289
-8,2010,Sao Paulo,1809
-8,2011,Sao Paulo,1067
+8,2010,Sao Paulo,1.809
+8,2011,Sao Paulo,1.067
 8,2012,Sao Paulo,435
 8,2013,Sao Paulo,497
-8,2014,Sao Paulo,1458
+8,2014,Sao Paulo,1.458
 8,2015,Sao Paulo,643
 8,2016,Sao Paulo,797
 8,2017,Sao Paulo,981
@@ -5906,14 +5906,14 @@
 9,2007,Sao Paulo,495
 9,2008,Sao Paulo,486
 9,2009,Sao Paulo,116
-9,2010,Sao Paulo,1677
-9,2011,Sao Paulo,1108
+9,2010,Sao Paulo,1.677
+9,2011,Sao Paulo,1.108
 9,2012,Sao Paulo,813
 9,2013,Sao Paulo,560
 9,2014,Sao Paulo,882
 9,2015,Sao Paulo,368
 9,2016,Sao Paulo,490
-9,2017,Sao Paulo,2868
+9,2017,Sao Paulo,2.868
 10,1998,Sao Paulo,434
 10,1999,Sao Paulo,763
 10,2000,Sao Paulo,647
@@ -6318,7 +6318,7 @@
 6,2001,Tocantins,305
 6,2002,Tocantins,396
 6,2003,Tocantins,329
-6,2004,Tocantins,1079
+6,2004,Tocantins,1.079
 6,2005,Tocantins,669
 6,2006,Tocantins,289
 6,2007,Tocantins,591
@@ -6328,90 +6328,90 @@
 6,2011,Tocantins,717
 6,2012,Tocantins,922
 6,2013,Tocantins,873
-6,2014,Tocantins,1372
-6,2015,Tocantins,115
-6,2016,Tocantins,1148
-6,2017,Tocantins,132
+6,2014,Tocantins,1.372
+6,2015,Tocantins,1.15
+6,2016,Tocantins,1.148
+6,2017,Tocantins,1.32
 7,1998,Tocantins,640
 7,1999,Tocantins,373
 7,2000,Tocantins,500
 7,2001,Tocantins,830
 7,2002,Tocantins,976
 7,2003,Tocantins,762
-7,2004,Tocantins,1389
-7,2005,Tocantins,1082
+7,2004,Tocantins,1.389
+7,2005,Tocantins,1.082
 7,2006,Tocantins,430
 7,2007,Tocantins,982
 7,2008,Tocantins,441
 7,2009,Tocantins,989
-7,2010,Tocantins,2408
-7,2011,Tocantins,1001
-7,2012,Tocantins,1693
-7,2013,Tocantins,1393
-7,2014,Tocantins,1404
-7,2015,Tocantins,1217
-7,2016,Tocantins,2737
-7,2017,Tocantins,2397
-8,1998,Tocantins,3747
-8,1999,Tocantins,1284
-8,2000,Tocantins,1949
-8,2001,Tocantins,2242
-8,2002,Tocantins,3027
-8,2003,Tocantins,1339
-8,2004,Tocantins,1776
-8,2005,Tocantins,184
-8,2006,Tocantins,1277
-8,2007,Tocantins,4747
+7,2010,Tocantins,2.408
+7,2011,Tocantins,1.001
+7,2012,Tocantins,1.693
+7,2013,Tocantins,1.393
+7,2014,Tocantins,1.404
+7,2015,Tocantins,1.217
+7,2016,Tocantins,2.737
+7,2017,Tocantins,2.397
+8,1998,Tocantins,3.747
+8,1999,Tocantins,1.284
+8,2000,Tocantins,1.949
+8,2001,Tocantins,2.242
+8,2002,Tocantins,3.027
+8,2003,Tocantins,1.339
+8,2004,Tocantins,1.776
+8,2005,Tocantins,1.84
+8,2006,Tocantins,1.277
+8,2007,Tocantins,4.747
 8,2008,Tocantins,845
-8,2009,Tocantins,1124
-8,2010,Tocantins,7865
-8,2011,Tocantins,1668
-8,2012,Tocantins,428
-8,2013,Tocantins,181
-8,2014,Tocantins,2917
-8,2015,Tocantins,254
-8,2016,Tocantins,3213
-8,2017,Tocantins,3536
-9,1998,Tocantins,5149
-9,1999,Tocantins,3415
-9,2000,Tocantins,2552
-9,2001,Tocantins,4839
-9,2002,Tocantins,5314
-9,2003,Tocantins,4637
-9,2004,Tocantins,5308
-9,2005,Tocantins,5319
-9,2006,Tocantins,2979
-9,2007,Tocantins,6829
-9,2008,Tocantins,239
-9,2009,Tocantins,2017
-9,2010,Tocantins,10172
-9,2011,Tocantins,4658
-9,2012,Tocantins,746
-9,2013,Tocantins,2445
-9,2014,Tocantins,352
-9,2015,Tocantins,551
-9,2016,Tocantins,3245
-9,2017,Tocantins,10737
-10,1998,Tocantins,1738
-10,1999,Tocantins,1378
-10,2000,Tocantins,1053
+8,2009,Tocantins,1.124
+8,2010,Tocantins,7.865
+8,2011,Tocantins,1.668
+8,2012,Tocantins,4.28
+8,2013,Tocantins,1.81
+8,2014,Tocantins,2.917
+8,2015,Tocantins,2.54
+8,2016,Tocantins,3.213
+8,2017,Tocantins,3.536
+9,1998,Tocantins,5.149
+9,1999,Tocantins,3.415
+9,2000,Tocantins,2.552
+9,2001,Tocantins,4.839
+9,2002,Tocantins,5.314
+9,2003,Tocantins,4.637
+9,2004,Tocantins,5.308
+9,2005,Tocantins,5.319
+9,2006,Tocantins,2.979
+9,2007,Tocantins,6.829
+9,2008,Tocantins,2.39
+9,2009,Tocantins,2.017
+9,2010,Tocantins,10.172
+9,2011,Tocantins,4.658
+9,2012,Tocantins,7.46
+9,2013,Tocantins,2.445
+9,2014,Tocantins,3.52
+9,2015,Tocantins,5.51
+9,2016,Tocantins,3.245
+9,2017,Tocantins,10.737
+10,1998,Tocantins,1.738
+10,1999,Tocantins,1.378
+10,2000,Tocantins,1.053
 10,2001,Tocantins,684
-10,2002,Tocantins,1537
-10,2003,Tocantins,1339
-10,2004,Tocantins,1658
-10,2005,Tocantins,2913
-10,2006,Tocantins,1176
-10,2007,Tocantins,2252
-10,2008,Tocantins,2832
+10,2002,Tocantins,1.537
+10,2003,Tocantins,1.339
+10,2004,Tocantins,1.658
+10,2005,Tocantins,2.913
+10,2006,Tocantins,1.176
+10,2007,Tocantins,2.252
+10,2008,Tocantins,2.832
 10,2009,Tocantins,718
-10,2010,Tocantins,2272
-10,2011,Tocantins,1591
-10,2012,Tocantins,368
-10,2013,Tocantins,2155
+10,2010,Tocantins,2.272
+10,2011,Tocantins,1.591
+10,2012,Tocantins,3.68
+10,2013,Tocantins,2.155
 10,2014,Tocantins,4
-10,2015,Tocantins,4844
-10,2016,Tocantins,2032
-10,2017,Tocantins,2969
+10,2015,Tocantins,4.844
+10,2016,Tocantins,2.032
+10,2017,Tocantins,2.969
 11,1998,Tocantins,1
 11,1999,Tocantins,29
 11,2000,Tocantins,96
