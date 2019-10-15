@@ -26,6 +26,26 @@ void setup() {
   // Load fires data
   dataEntriesMap = loadFiresDataFromCSV("fires_data.csv");
   println("Loaded " + dataEntriesMap.size() + " data entries");
+  
+  // Shade states according to fire density (only once)
+  shadeStates();
+}
+
+void draw() {
+  background(255);
+
+  map.draw();
+}
+
+void shadeStates() {
+  for (Marker marker : stateMarkers) {
+    // Find data for state of the current marker
+    String stateName = marker.getProperty("name").toString(); 
+    if (dataEntriesMap.containsKey(stateName)) {
+      List<StateEntry> stateEntries = dataEntriesMap.get(stateName);
+      println(stateName + " " + stateEntries.size());
+    }
+  }
 }
 
 HashMap<String, List<StateEntry>> loadFiresDataFromCSV(String fileName) {
@@ -50,13 +70,6 @@ HashMap<String, List<StateEntry>> loadFiresDataFromCSV(String fileName) {
     }  
   }
   return dataEntriesMap;
-}
-
-
-void draw() {
-  background(255);
-
-  map.draw();
 }
 
 
