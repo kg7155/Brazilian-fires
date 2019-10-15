@@ -6,7 +6,7 @@ import de.fhpotsdam.unfolding.utils.*;
 import java.util.List;
 
 UnfoldingMap map;
-HashMap<String, List<StateEntry>> dataEntriesMap;
+HashMap<String, ArrayList<StateEntry>> dataEntriesMap;
 List<Marker> stateMarkers;
 
 void setup() {
@@ -42,14 +42,20 @@ void shadeStates() {
     // Find data for state of the current marker
     String stateName = marker.getProperty("name").toString(); 
     if (dataEntriesMap.containsKey(stateName)) {
-      List<StateEntry> stateEntries = dataEntriesMap.get(stateName);
-      println(stateName + " " + stateEntries.size());
+      ArrayList<StateEntry> stateEntries = dataEntriesMap.get(stateName);
+      
+      // Shade state based on the last value from the list (test purposes)
+      if (stateEntries != null) {
+        int numOfFires = stateEntries.get(stateEntries.size()-1).numberOfFires;
+        float transparency = map(numOfFires, 0, 998, 10, 255);
+        marker.setColor(color(255, 0, 0, transparency));  
+      }
     }
   }
 }
 
-HashMap<String, List<StateEntry>> loadFiresDataFromCSV(String fileName) {
-  HashMap<String, List<StateEntry>> dataEntriesMap = new HashMap<String, List<StateEntry>>();
+HashMap<String, ArrayList<StateEntry>> loadFiresDataFromCSV(String fileName) {
+  HashMap<String, ArrayList<StateEntry>> dataEntriesMap = new HashMap<String, ArrayList<StateEntry>>();
   
   String[] rows = loadStrings(fileName);
   
@@ -60,7 +66,7 @@ HashMap<String, List<StateEntry>> loadFiresDataFromCSV(String fileName) {
       dataEntry.state = cols[2];
       dataEntry.month = Integer.parseInt(cols[0]);
       dataEntry.year = Integer.parseInt(cols[1]);
-      dataEntry.numberOfFires = Integer.parseInt(cols[3]);
+      dataEntry.numberOfFires = Math.round(Float.parseFloat(cols[3]));
       
       if (dataEntriesMap.containsKey(dataEntry.state)) {
         dataEntriesMap.get(dataEntry.state).add(dataEntry);
