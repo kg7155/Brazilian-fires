@@ -1,103 +1,121 @@
-import de.fhpotsdam.unfolding.*;
-import de.fhpotsdam.unfolding.data.*;
-import de.fhpotsdam.unfolding.marker.*;
-import de.fhpotsdam.unfolding.geo.*;
-import de.fhpotsdam.unfolding.utils.*;
-import java.util.List;
+HashMap<String, PShape> shapeStatesMap; // states as PShapes
+HashMap<String, ArrayList<StateEntry>> dataEntriesMap; // fire data
+PShape psBrazil; // map of Brazil
+PGraphics pgView; // view to display (for now only one)
+ArrayList<StateEntry> thisStateEntries; // state entries to display
+int thisMonth = 8; // month to display
+int thisYear = 2016; // year to display
 
-UnfoldingMap map;
-HashMap<String, ArrayList<StateEntry>> dataEntriesMap;
-List<Marker> stateMarkers;
+/*----------------------------------------------------------------------*/ 
 
-void setup() {
-  size(800, 800, P2D);
-  smooth();
-
-  map = new UnfoldingMap(this, 50, 50, 700, 700);
-  map.zoomAndPanTo(286, 417, 4);
-  map.setBackgroundColor(255);
-  MapUtils.createDefaultEventDispatcher(this, map);
-
-  // Load state polygons and add them as markers
-  List<Feature> states = GeoJSONReader.loadData(this, "brazil-states.geo.json");
-  stateMarkers = MapUtils.createSimpleMarkers(states);
-  map.addMarkers(stateMarkers);
+void setup()
+{
+  background(255);
+  size(1280, 800, P2D);
   
-  // Load fires data
-  dataEntriesMap = loadFiresDataFromCSV("fires_data.csv");
-  println("Loaded " + dataEntriesMap.size() + " data entries");
-  
-  // Shade states according to fire density
-  shadeStates();
+  loadData();
+  createViews();
 }
+
+/*----------------------------------------------------------------------*/ 
 
 void draw() {
-  background(255);
-
-  map.draw();
+  image(pgView, 0, 0);
+  detailState();
 }
 
-void shadeStates() {
-  for (Marker marker : stateMarkers) {
-    // Find data for state of the current marker
-    String stateName = marker.getProperty("name").toString(); 
-    if (dataEntriesMap.containsKey(stateName)) {
-      ArrayList<StateEntry> stateEntries = dataEntriesMap.get(stateName);
-      
-      if (stateEntries != null) {
-        int numOfFires = getNumOfFires(stateEntries, 2017, 8);
-        float transparency = map(numOfFires, 0, 25963, 10, 255);
-        marker.setColor(color(255, 0, 0, transparency));  
-      }
-    }
+/*----------------------------------------------------------------------*/ 
+// load all data and prepare views
+
+void loadData() {
+  // load fire data
+  dataEntriesMap = loadFiresDataFromCSV("fires_data.csv");
+  
+  // load map data and save states separately
+  psBrazil = loadShape("brazilLow.svg");
+  shapeStatesMap = new HashMap<String, PShape>(); 
+  for (String stateCode : dataEntriesMap.keySet()) {
+    shapeStatesMap.put(stateCode, psBrazil.getChild(stateCode));  
   }
 }
 
-int getNumOfFires(ArrayList<StateEntry> stateEntries, int year, int month){
-    for (StateEntry state : stateEntries){
-      if (state.getMonth() == month && state.getYear() == year) {
-        return state.numOfFires;  
-      }
-    }
-    return 0;
+/*----------------------------------------------------------------------*/ 
+// create views that enable highlighting on mouse hover
+
+void createViews() {
+  pgView = createGraphics(width, height);
+  pgView.beginDraw();
+  pgView.noStroke();
+  pgView.background(255);
+  
+  for (StateEntry se : thisStateEntries) {
+    PShape shapeState = shapeStatesMap.get(se.stateCode);
+    shapeState.disableStyle();
+    pgView.fill(255, 0, 0, se.transparency);
+    pgView.shape(shapeState, 0, 0);
+  }
+  pgView.endDraw();
 }
 
+/*----------------------------------------------------------------------*/
+// highlight (by drawing stroke) selected state
+
+void detailState() {
+  loadPixels();
+  // get transparency value under mouse
+  int alphaUnderMouse = 255 - int(green(pgView.pixels[mouseX + mouseY * width]));
+  
+  for (StateEntry se : thisStateEntries) {
+    // compare transparency values
+    // if they are the same, the mouse is over current state
+    if (se.transparency == alphaUnderMouse) {
+      PShape shapeState = shapeStatesMap.get(se.stateCode);
+      noFill();
+      shape(shapeState, 0, 0);  
+    } 
+  }
+}
+
+/*----------------------------------------------------------------------*/
+// create and return data structure containing fire data
+
 HashMap<String, ArrayList<StateEntry>> loadFiresDataFromCSV(String fileName) {
-  HashMap<String, ArrayList<StateEntry>> dataEntriesMap = new HashMap<String, ArrayList<StateEntry>>();
+  dataEntriesMap = new HashMap<String, ArrayList<StateEntry>>();
+  thisStateEntries = new ArrayList<StateEntry>();
   
   String[] rows = loadStrings(fileName);
-  
   for (String row : rows) {
     String[] cols = row.split(",");
-    if (cols.length >= 4) {    
+    if (cols.length >= 5) {    
       StateEntry dataEntry = new StateEntry();
-      dataEntry.state = cols[2];
-      dataEntry.month = Integer.parseInt(cols[0]);
-      dataEntry.year = Integer.parseInt(cols[1]);
-      dataEntry.numOfFires = Math.round(Float.parseFloat(cols[3]));
+      dataEntry.stateCode = cols[0];
+      dataEntry.stateName = cols[1];
+      dataEntry.month = Integer.parseInt(cols[2]);
+      dataEntry.year = Integer.parseInt(cols[3]);
+      dataEntry.numOfFires = Math.round(Float.parseFloat(cols[4]));
+      dataEntry.transparency = int(map(dataEntry.numOfFires, 0, 25963, 10, 255));
       
-      if (dataEntriesMap.containsKey(dataEntry.state)) {
-        dataEntriesMap.get(dataEntry.state).add(dataEntry);
+      if (dataEntriesMap.containsKey(dataEntry.stateCode)) {
+        dataEntriesMap.get(dataEntry.stateCode).add(dataEntry);
       } else {
-        dataEntriesMap.put(dataEntry.state, new ArrayList<StateEntry>());    
-      } 
+        dataEntriesMap.put(dataEntry.stateCode, new ArrayList<StateEntry>());    
+      }
+      
+      if (dataEntry.month == thisMonth && dataEntry.year == thisYear) {
+        thisStateEntries.add(dataEntry); 
+      }
     }  
   }
   return dataEntriesMap;
 }
 
+//////////////////////////////////
 
 class StateEntry {
- String state;
- int month;
- int year;
- int numOfFires;
- 
- public int getMonth(){
-   return this.month;  
- }
- 
- public int getYear(){
-   return this.year;  
- }
+  String stateCode;
+  String stateName;
+  int month;
+  int year;
+  int numOfFires;
+  int transparency;
 }
