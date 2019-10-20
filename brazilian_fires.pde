@@ -8,16 +8,22 @@ HashMap<String, Integer> statesColorsMap;
 PShape psBrazil; // map of Brazil (http://www.amcharts.com/svg-maps/)
 PGraphics idView;
 PGraphics myView;
+color darkGray = color(127);
 ArrayList<StateEntry> thisStateEntries; // state entries to display
 int thisMonth = 8; // month to display
 int thisYear = 2014; // year to display
+String[] nameOfMonths = new String[] {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 
 /*----------------------------------------------------------------------*/
 
 void setup()
 {
+  fullScreen();
   background(255);
-  size(1280, 800, P2D);
+  //size(1280, 800, P2D);
+  
+  PFont font = createFont("SEGOEUI.TTF", 12);
+  textFont(font);
 
   loadData();
   createIdView();
@@ -29,6 +35,7 @@ void setup()
 void draw() {
   //background(255);
   image(myView, 0, 0);
+  displayTitle();
   showDetails();
 }
 
@@ -67,7 +74,7 @@ void createIdView() {
     PShape shapeState = shapeStatesMap.get(stateCode);
     //shapeState.disableStyle();
     shapeState.setFill(clr);
-    idView.shape(shapeState);
+    idView.shape(shapeState, width/3, height/7);
   }
   idView.endDraw();
 }
@@ -84,7 +91,10 @@ void createView() {
   for (StateEntry se : thisStateEntries) {
     PShape shapeState = shapeStatesMap.get(se.stateCode);
     shapeState.setFill(color(255, (255 - se.transparency), (255 - se.transparency)));
-    myView.shape(shapeState);
+    shapeState.setStroke(true);
+    shapeState.setStroke(color(255));
+    shapeState.setStrokeWeight(1);
+    myView.shape(shapeState, width/3, height/7);
   }
   myView.endDraw();
 }
@@ -103,11 +113,30 @@ void showDetails() {
     if (mouseClr == shapeClr) {
       // select and draw current
       shapeState.setStroke(true);
-      shapeState.setStroke(color(105, 105, 105));
+      shapeState.setStroke(darkGray);
       shapeState.setStrokeWeight(1);
-      shape(shapeState, 0, 0);
+      shape(shapeState, width/3, height/7);
+      
+      fill(darkGray);
+      textAlign(CENTER);
+      textSize(16);
+      text(se.stateName, width/2, height/5*4);
+      textSize(14);
+      text("Number of fires: " + se.numOfFires, width/2, height/6*5);
     }
   }
+}
+
+/*----------------------------------------------------------------------*/
+// display title of the visualisation at top center
+
+void displayTitle() {
+  fill(darkGray);
+  textSize(20);
+  textAlign(CENTER);
+  text("Fires vs planted forests in Brazil", width/2, height/18);
+  textSize(25);
+  text(nameOfMonths[thisMonth-1] + " " + thisYear, width/2, height/11);
 }
 
 /*----------------------------------------------------------------------*/
