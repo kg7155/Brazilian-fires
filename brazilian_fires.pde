@@ -7,34 +7,37 @@ import java.util.*;
 
 HashMap<String, PShape> shapeStatesMap; // states as PShapes
 HashMap<String, ArrayList<StateEntry>> dataEntriesMap; // my data structure
-HashMap<String, Integer> statesColorsMap;
+HashMap<String, Integer> statesColoursMap; // states colours for id
 PShape psBrazil; // map of Brazil (http://www.amcharts.com/svg-maps/)
-PGraphics idView;
-PGraphics[] Views;
-color darkGray = color(127);
+PGraphics idView; // hidden view that enables state identification
+PGraphics[] Views; // other visualisation views
+
 int thisMonth = 1; // month to display
 int thisYear = 2006; // year to display
 int thisViewIdx; // view index to display
 ArrayList<StateEntry> thisStateEntries; // state entries to display
-String[] nameOfMonths = new String[] {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 
+String[] nameOfMonths = new String[] {"January", "February", "March", "April", "May", "June", 
+  "July", "August", "September", "October", "November", "December"};
+color darkGray = color(127);
+PFont font;
 ControlP5 cp5Dropdown; // dropdown control
 
 /*----------------------------------------------------------------------*/
 
 void setup()
 {
-  //fullScreen(P2D);
   background(255);
-  size(1280, 800, P2D);
+  size(1280, 960, P2D);
+  //fullScreen(P2D);
 
-  // set font
-  PFont font = createFont("SEGOEUI.TTF", 12);
+  // load and set font
+  font = createFont("SEGOEUI.TTF", 34);
   textFont(font);
 
   // create GUI elements
-  //cp5Dropdown = new ControlP5(this);
-  //Dropdown dr = new Dropdown();
+  cp5Dropdown = new ControlP5(this);
+  createDropdown();
 
   loadData();
   createIdView();
@@ -60,18 +63,18 @@ void loadData() {
   // load map data and save states separately
   psBrazil = loadShape("brazilLow.svg");
   shapeStatesMap = new HashMap<String, PShape>(); 
-  statesColorsMap = new HashMap<String, Integer>();
+  statesColoursMap = new HashMap<String, Integer>();
   int blue = 255;
   for (String stateCode : dataEntriesMap.keySet()) {
-    shapeStatesMap.put(stateCode, psBrazil.getChild(stateCode));
-    statesColorsMap.put(stateCode, color(0, 0, blue));
+    PShape child = psBrazil.getChild(stateCode);
+    shapeStatesMap.put(stateCode, child);
+    statesColoursMap.put(stateCode, color(0, 0, blue));
     blue--;
   }
 
   // set initial view index
   thisViewIdx = getViewIdx(thisMonth, thisYear);
-  println("View index: " + thisViewIdx);
-
+ 
   // set initial state entries to display
   thisStateEntries = getStateEntries(thisMonth, thisYear);
   //println(Arrays.toString(thisStateEntries.toArray()));
@@ -87,7 +90,7 @@ void createIdView() {
   idView.noStroke();
   idView.background(255);
 
-  for (HashMap.Entry<String, Integer> entry : statesColorsMap.entrySet()) {
+  for (HashMap.Entry<String, Integer> entry : statesColoursMap.entrySet()) {
     String stateCode = entry.getKey();
     color clr = entry.getValue();
 
@@ -110,7 +113,7 @@ void createViews() {
     Views[i] = createGraphics(width, height);
   }
 
-  // prepare the PGraphics for each view
+  // prepare PGraphics for each view
   int viewIdx = 0;
   for (int year = 2006; year <= 2016; year++) {
     for (int month = 1; month <= 12; month++) {
@@ -176,16 +179,16 @@ void printDataEntriesMap() {
 }
 
 /*----------------------------------------------------------------------*/
-// highlight selected state by drawing stroke
+// highlight selected state by drawing stroke and data details
 
 void showDetails() {
   color mouseClr = idView.get(mouseX, mouseY);
 
   for (StateEntry se : thisStateEntries) {
     PShape shapeState = shapeStatesMap.get(se.stateCode);
-    color shapeClr = statesColorsMap.get(se.stateCode);
+    color shapeClr = statesColoursMap.get(se.stateCode);
 
-    // compare colour values: if they are the same, the mouse is over current state
+    // compare colour values: if same, the mouse is over current state
     if (mouseClr == shapeClr) {
       // select and draw current
       color stateClr = color(255, (255 - se.transparency), (255 - se.transparency));
@@ -207,7 +210,7 @@ void showDetails() {
 }
 
 /*----------------------------------------------------------------------*/
-// display title of the visualisation at top center
+// display title of the visualisation at top centre
 
 void displayTitle() {
   fill(darkGray);
@@ -219,7 +222,7 @@ void displayTitle() {
 }
 
 /*----------------------------------------------------------------------*/
-// create and return data structure containing fire data
+// create and return hashmap containing fire data
 
 HashMap<String, ArrayList<StateEntry>> loadFiresDataFromCSV(String fileName) {
   dataEntriesMap = new HashMap<String, ArrayList<StateEntry>>();
@@ -254,15 +257,35 @@ HashMap<String, ArrayList<StateEntry>> loadFiresDataFromCSV(String fileName) {
   return dataEntriesMap;
 }
 
-//////////////////////////////////
+/*----------------------------------------------------------------------*/
+// create and style dropdown control
 
-class Dropdown {
-  Dropdown() {
-    cp5Dropdown.addScrollableList("dropdown")
-      .setPosition(width/2, height/7*6)
-      .setOpen(false)
-      ;
-  }
+void createDropdown() {
+  cp5Dropdown.setFont(font, 10);
+  cp5Dropdown.setColorCaptionLabel(0);
+  
+  cp5Dropdown.addScrollableList("dropdown")
+    .addItems(Arrays.asList(nameOfMonths))
+    .setPosition(width/2, height/7*6)
+    .setSize(80, 100)
+    .setBarHeight(20)
+    .setItemHeight(20)
+    .setType(ScrollableList.DROPDOWN)
+    .setOpen(false)
+    .setColorBackground(color(255,0,0,120))
+    ;
+
+  cp5Dropdown.get(ScrollableList.class, "dropdown").setValue(thisMonth-1);
+}
+
+/*----------------------------------------------------------------------*/
+// listen to changes in dropdown selection and react accordingly
+// n: selected item index
+
+void dropdown(int n) {
+  thisMonth = n+1;
+  thisViewIdx = getViewIdx(thisMonth, thisYear);
+  thisStateEntries = getStateEntries(thisMonth, thisYear);
 }
 
 //////////////////////////////////
