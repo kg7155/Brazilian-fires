@@ -15,6 +15,7 @@ PGraphics[] Views; // other visualisation views
 int startYear = 2006; // start year from data
 int endYear = 2016; // end year from data
 int midYear = startYear + (endYear-startYear) / 2; // calculated mid year
+int numYears = endYear - startYear + 1; // number of years
 
 int thisMonth = 1; // month to display
 int thisYear = 2006; // year to display
@@ -23,19 +24,20 @@ ArrayList<StateEntry> thisStateEntries; // state entries to display
 
 String[] nameOfMonths = new String[] {"January", "February", "March", "April", "May", "June", 
   "July", "August", "September", "October", "November", "December"};
-  
+
 color darkGray = color(127);
 color lightPink = color(255, 205, 205);
 PFont font;
-ControlP5 cp5Dropdown;
+ControlP5 dropdown;
 Timeline tl;
+Button btn;
 
 /*----------------------------------------------------------------------*/
 
 void setup() {
   background(255);
-  size(1280, 960, P2D);
-  //fullScreen(P2D);
+  //size(1280, 960, P2D);
+  fullScreen(P2D);
   smooth(8);
 
   // load and set font
@@ -43,9 +45,10 @@ void setup() {
   textFont(font);
 
   // create GUI elements
-  cp5Dropdown = new ControlP5(this);
-  createDropdown();
-  tl = new Timeline(width/2, height-30);
+  dropdown = new ControlP5(this);
+  createDropdown(width/2, height-135);
+  tl = new Timeline(width/2, height-50);
+  btn = new Button(width/2, height-85);
 
   loadData();
   createIdView();
@@ -57,20 +60,26 @@ void setup() {
 void draw() {
   //background(255);
   tl.rollover(mouseX, mouseY);
+  btn.rollover(mouseX, mouseY);
+  btn.applyButton();
   image(Views[thisViewIdx], 0, 0);
 
   displayTitle();
-  tl.display();
-
+  if (!dropdown.get(ScrollableList.class, "dropdown").isOpen()) {
+    tl.display();
+    btn.display();
+  }
   showDetails();
 }
 
 void mousePressed() {
   tl.press(mouseX, mouseY);
+  btn.press(mouseX, mouseY);
 }
 
 void mouseReleased() {
   tl.noPress();
+  btn.noPress();
 }
 
 /*----------------------------------------------------------------------*/
@@ -187,6 +196,18 @@ int getViewIdx(int month, int year) {
 }
 
 /*----------------------------------------------------------------------*/
+// get month and year from view index
+int[] getMonthYear(int viewIdx) {
+  int yearIdx = viewIdx/12; // year idx
+
+  int[] my = new int[2];
+  my[0] = viewIdx - yearIdx*12 + 1; // month
+  my[1] = yearIdx + startYear; // year
+
+  return my;
+}
+
+/*----------------------------------------------------------------------*/
 // print my data structure
 
 void printDataEntriesMap() {
@@ -281,16 +302,20 @@ HashMap<String, ArrayList<StateEntry>> loadFiresDataFromCSV(String fileName) {
 /*----------------------------------------------------------------------*/
 // create and style dropdown control
 
-void createDropdown() {
-  cp5Dropdown.setFont(font, 10);
-  cp5Dropdown.setColorCaptionLabel(darkGray);
-  cp5Dropdown.setColorForeground(color(255, 0, 0, 12));
-  cp5Dropdown.setColorActive(color(255, 0, 0, 12));
+void createDropdown(float x, float y) {
+  // centre menu
+  int ddWidth = 80;
+  x = x - ddWidth/2;
 
-  cp5Dropdown.addScrollableList("dropdown")
+  dropdown.setFont(font, 10);
+  dropdown.setColorCaptionLabel(darkGray);
+  dropdown.setColorForeground(color(255, 0, 0, 12));
+  dropdown.setColorActive(color(255, 0, 0, 12));
+
+  dropdown.addScrollableList("dropdown")
     .addItems(Arrays.asList(nameOfMonths))
-    .setPosition(width/2, height/7*6)
-    .setSize(80, 100)
+    .setPosition(x, y)
+    .setSize(ddWidth, 100)
     .setBarHeight(20)
     .setItemHeight(20)
     .setType(ScrollableList.DROPDOWN)
@@ -298,7 +323,7 @@ void createDropdown() {
     .setColorBackground(lightPink)
     ;
 
-  cp5Dropdown.get(ScrollableList.class, "dropdown").setValue(thisMonth-1);
+  dropdown.get(ScrollableList.class, "dropdown").setValue(thisMonth-1);
 }
 
 /*----------------------------------------------------------------------*/
@@ -313,11 +338,146 @@ void dropdown(int n) {
 
 //////////////////////////////////
 
+class Button {
+  boolean pause, play, stop;
+  PVector[] pos;
+  int d; // diameter of a button
+  boolean[] pressed;
+  boolean[] mouseOver;
+  int counter;
+
+  /*----------------------------*/
+
+  Button(float x, float y) {    
+    d = 20;
+    pos = new PVector[3];
+    pos[0] = new PVector(x - 1.5*d, y);
+    pos[1] = new PVector(x, y);
+    pos[2] = new PVector(x + 1.5*d, y);
+
+    pressed = new boolean[3];
+    mouseOver = new boolean[3];
+    for (int i = 0; i < pressed.length; i++) {
+      pressed[i] = false;
+      mouseOver[i] = false;
+    }
+    counter = 0;
+  }
+
+  /*----------------------------*/
+
+  void applyButton() {
+    if (pressed[0]) // pause
+      play = false;
+    if (pressed[1]) // play
+      play = true;
+    if (pressed[2]) { // stop
+      play = false;  
+      thisYear = startYear;
+      thisMonth = 1;
+      thisViewIdx = getViewIdx(thisMonth, thisYear);
+      thisStateEntries = getStateEntries(thisMonth, thisYear);
+      dropdown.get(ScrollableList.class, "dropdown").setValue(thisMonth-1);
+    }
+  }
+
+  /*----------------------------*/
+  // if any button is pressed, make pressed true
+
+  void press(float mx, float my) {
+    for (int i = 0; i < pos.length; i++) {
+      if ((dist(mx, my, pos[i].x, pos[i].y) < d/2) && (!dropdown.get(ScrollableList.class, "dropdown").isOpen())) {
+        pressed[i] = true;
+      }
+    }
+  }
+
+  /*----------------------------*/
+  // make pressed false for each button (used with mouseReleased event)
+
+  void noPress() {
+    for (int i = 0; i < pos.length; i++)
+      pressed[i] = false;
+  }
+
+  /*----------------------------*/
+  // if mouse is over any button, make mouseover true, else false
+
+  void rollover(float mx, float my) {
+    for (int i = 0; i < pos.length; i++) {
+      if (dist(mx, my, pos[i].x, pos[i].y) < d/2)
+        mouseOver[i] = true;
+      else
+        mouseOver[i] = false;
+    }
+  }
+
+  /*----------------------------*/
+
+  void display() {
+    if (play && (counter % 20 == 0)) {
+      if (thisViewIdx < Views.length - 1) {
+        thisViewIdx++;
+      } else {
+        thisViewIdx = 0;
+      }
+
+      int[] my = getMonthYear(thisViewIdx);
+      thisMonth = my[0];
+      thisYear = my[1];
+      thisStateEntries = getStateEntries(thisMonth, thisYear);
+    }
+    counter++;
+
+    if (play) {
+      dropdown.get(ScrollableList.class, "dropdown").setValue(thisMonth-1);
+    }
+
+    noStroke();
+    // draw button icons according to their status
+    for (int i = 0; i < pos.length; i++) {
+      if (pressed[i])
+        fill(lightPink);
+      else if (mouseOver[i])
+        fill(lightPink);
+      else
+        fill(darkGray);
+      ellipse(pos[i].x, pos[i].y, d, d);
+    }
+    fill(255);
+    displayPause(pos[0].x, pos[0].y);
+    displayPlay(pos[1].x, pos[1].y);
+    displayStop(pos[2].x, pos[2].y);
+  }
+
+  /*----------------------------*/
+  // BUTTON ICONS
+
+  // pause: two vertical lines
+  void displayPause(float x, float y) {
+    rectMode(CENTER);
+    rect(x-3, y, 4, 9);
+    rect(x+3, y, 4, 9);
+  }
+
+  // play: a triangle
+  void displayPlay(float x, float y) {   
+    triangle(x-3, y-5, x-3, y+5, x+5, y);
+  }
+
+  // stop: a sqaure
+  void displayStop(float x, float y) {
+    rectMode(CENTER);
+    rect(x, y, 9, 9);
+  }
+}
+
+//////////////////////////////////
+
 class Timeline {
   PVector p0;  // centre of the timeline
   PVector[] pos;  // array of circle positions
 
-  int numYears;  // number of years
   int midIdx;  // middle year index
   int r;  // circle radius
   int d;  // distance between circles
@@ -328,7 +488,6 @@ class Timeline {
   /*----------------------------*/
 
   public Timeline(int x, int y) {
-    numYears = endYear - startYear + 1;
     midIdx = numYears/2;
     r = 6;
     d = 2*r + 40;
@@ -346,7 +505,7 @@ class Timeline {
 
   /*----------------------------*/
   // set position of each circle
-  
+
   PVector[] setPosition() {
     PVector[] p = new PVector[numYears];
 
@@ -361,7 +520,7 @@ class Timeline {
 
   /*----------------------------*/
   // if mouse is over any button, make mouseover true or false
-  
+
   void rollover(float mx, float my) {
     for (int i = 0; i < numYears; i++) {
       if (dist(mx, my, pos[i].x, pos[i].y) < r)
@@ -373,10 +532,10 @@ class Timeline {
 
   /*----------------------------*/
   // if any button is pressed, make pressed true and update view variables
-  
+
   void press(float mx, float my) {
     for (int i = 0; i < numYears; i++)
-      if (dist(mx, my, pos[i].x, pos[i].y) < r) {
+      if ((dist(mx, my, pos[i].x, pos[i].y) < r) && (!dropdown.get(ScrollableList.class, "dropdown").isOpen())) {
         pressed[i] = true;
         thisYear = startYear + i;
         thisViewIdx = getViewIdx(thisMonth, thisYear);
@@ -385,8 +544,8 @@ class Timeline {
   }
 
   /*----------------------------*/
-  //make pressed false for each button (used with mouseReleased event)
-  
+  // make pressed false for each button (used with mouseReleased event)
+
   void noPress() {
     for (int i = 0; i < numYears; i++)
       pressed[i] = false;
@@ -396,7 +555,7 @@ class Timeline {
 
   void display() {        
     int thisYearIdx = thisYear - startYear;
-    
+
     // draw line
     strokeWeight(2);
     stroke(darkGray);
