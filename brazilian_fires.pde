@@ -8,6 +8,7 @@ import java.util.*;
 HashMap<String, PShape> shapeStatesMap; // states as PShapes
 HashMap<String, ArrayList<StateEntry>> dataEntriesMap; // my data structure
 HashMap<String, Integer> statesColoursMap; // states colours for id
+HashMap<String, int[]> coordinatesMap; // states coordinates
 PShape psBrazil; // map of Brazil (http://www.amcharts.com/svg-maps/)
 PGraphics idView; // hidden view that enables state identification
 PGraphics[] Views; // other visualisation views
@@ -26,7 +27,9 @@ String[] nameOfMonths = new String[] {"January", "February", "March", "April", "
   "July", "August", "September", "October", "November", "December"};
 
 color darkGray = color(127);
+color green = color(182,239,148);
 color lightPink = color(255, 205, 205);
+
 PFont font;
 ControlP5 dropdown;
 Timeline tl;
@@ -65,6 +68,7 @@ void draw() {
   image(Views[thisViewIdx], 0, 0);
 
   displayTitle();
+  displayLegend();
   if (!dropdown.get(ScrollableList.class, "dropdown").isOpen()) {
     tl.display();
     btn.display();
@@ -86,8 +90,9 @@ void mouseReleased() {
 // load all data
 
 void loadData() {
-  // load fire data
   dataEntriesMap = loadFiresDataFromCSV("fires_data.csv");
+  loadPlantData("planted_forests_data.csv");
+  coordinatesMap = loadCoordinatesFromCSV("positions.csv");
 
   // load map data and save states separately
   psBrazil = loadShape("brazilLow.svg");
@@ -161,6 +166,15 @@ void createViews() {
         shapeState.setStroke(color(255));
         shapeState.setStrokeWeight(1);
         Views[viewIdx].shape(shapeState, width/3, height/7);
+        
+        // draw circles for planted forests
+        if (se.plantedArea != 0) {
+          int[] xy = coordinatesMap.get(se.stateCode);
+          int size = int(map(se.plantedArea, 13901, 1536310, 10, 70));
+          Views[viewIdx].fill(green);
+          Views[viewIdx].ellipse(xy[0], xy[1], size, size);
+        }
+        
       }
       Views[viewIdx].endDraw();
       viewIdx++;
@@ -184,7 +198,24 @@ ArrayList<StateEntry> getStateEntries(int month, int year) {
       }
     }
   }
+  return stateEntries;
+}
 
+/*----------------------------------------------------------------------*/
+// return state entries for corresponding state and year
+
+ArrayList<StateEntry> getStateEntries(String stateCode, int year) {
+  ArrayList<StateEntry> stateEntries = new ArrayList<StateEntry>();
+  
+  // iterate through states 
+  for (ArrayList<StateEntry> dataEntries : dataEntriesMap.values()) {
+    // iterate through state entries
+    for (StateEntry dataEntry : dataEntries) {
+      if ((dataEntry.stateCode.equals(stateCode)) && (dataEntry.year == year)) {
+        stateEntries.add(dataEntry);
+      }
+    }
+  }
   return stateEntries;
 }
 
@@ -197,6 +228,7 @@ int getViewIdx(int month, int year) {
 
 /*----------------------------------------------------------------------*/
 // get month and year from view index
+
 int[] getMonthYear(int viewIdx) {
   int yearIdx = viewIdx/12; // year idx
 
@@ -214,7 +246,7 @@ void printDataEntriesMap() {
   for (Map.Entry<String, ArrayList<StateEntry>> entry : dataEntriesMap.entrySet()) {
     println(entry.getKey());
     for (StateEntry se : entry.getValue()) {
-      println(se.stateCode + " " + se.month + " " + se.year);
+      println(se.stateCode + " " + se.month + " " + se.year + " " + se.plantedArea);
     }
   }
 }
@@ -239,6 +271,13 @@ void showDetails() {
       shapeState.setStrokeWeight(1);
 
       shape(shapeState, width/3, height/7);
+      
+      if (se.plantedArea != 0) {
+          int[] xy = coordinatesMap.get(se.stateCode);
+          int size = int(map(se.plantedArea, 13901, 1536310, 10, 70));
+          fill(green);
+          ellipse(xy[0], xy[1], size, size);
+        }
 
       fill(darkGray);
       textAlign(CENTER);
@@ -246,6 +285,9 @@ void showDetails() {
       text(se.stateName, width/2, height/5*4);
       textSize(14);
       text("Number of fires: " + se.numOfFires, width/2, height/6*5);
+      
+      if (se.plantedArea != 0)
+        text("Planted forests area: " + se.plantedArea + " ha", width/2, height/6*5+18);
     }
   }
 }
@@ -260,6 +302,30 @@ void displayTitle() {
   text("Fires vs planted forests in Brazil", width/2, height/18);
   textSize(25);
   text(nameOfMonths[thisMonth-1] + " " + thisYear, width/2, height/11);
+}
+
+/*----------------------------------------------------------------------*/
+// display legend for planted forests area 
+
+void displayLegend() {
+  fill(darkGray);
+  textSize(14);
+  text("Planted forests area [ha]:", width-150, height/21);
+
+  int[] sizes = new int[] {15000, 150000, 1500000};
+  int[] ys = new int[] {height/15, height/11, height/7};
+  
+  for (int i = 0; i < sizes.length; i++) {
+    int size = sizes[i];
+    int cs = int(map(size, 13901, 1536310, 10, 60));
+    fill(green);
+    ellipse(width-190, ys[i], cs, cs);
+    
+    fill(darkGray);
+    textSize(14);
+    textAlign(LEFT);
+    text(sizes[i], width - 135, ys[i]+5);
+  }
 }
 
 /*----------------------------------------------------------------------*/
@@ -297,6 +363,59 @@ HashMap<String, ArrayList<StateEntry>> loadFiresDataFromCSV(String fileName) {
     }
   }
   return dataEntriesMap;
+}
+
+/*----------------------------------------------------------------------*/
+// load planted forests area data
+
+void loadPlantData(String fileName) {
+  String[] rows = loadStrings(fileName);
+  // skip header
+  boolean firstRow = true;
+  for (String row : rows) {
+    String[] cols = row.split(",");
+    if (firstRow) {
+      firstRow = false;
+      continue;
+    }
+
+    if (cols.length >= 4) {
+      String stateCode = cols[0];
+      int year = Integer.parseInt(cols[2]);
+      int plantedArea = Integer.parseInt(cols[3]);
+      
+      // add planted area to all corresponding records
+      ArrayList<StateEntry> stateEntries = getStateEntries(stateCode, year);
+      for (StateEntry se : stateEntries) {
+        se.plantedArea = plantedArea;  
+      }
+    }
+  }
+}
+
+/*----------------------------------------------------------------------*/
+// create and return hashmap containing states coordinates
+
+HashMap<String, int[]> loadCoordinatesFromCSV(String fileName) {
+  coordinatesMap = new HashMap<String, int[]>();
+  
+  String[] rows = loadStrings(fileName);
+  for (String row : rows) {
+    String[] cols = row.split(",");
+    
+    if (cols.length >= 4) {
+      String stateCode = cols[0];
+      
+      int xy[] = new int[2];
+      xy[0] = Integer.parseInt(cols[2]);
+      xy[1] = Integer.parseInt(cols[3]);
+      
+      if (!coordinatesMap.containsKey(stateCode)) {
+        coordinatesMap.put(stateCode, xy);
+      }
+    }
+  }
+  return coordinatesMap;
 }
 
 /*----------------------------------------------------------------------*/
@@ -421,7 +540,6 @@ class Button {
       } else {
         thisViewIdx = 0;
       }
-
       int[] my = getMonthYear(thisViewIdx);
       thisMonth = my[0];
       thisYear = my[1];
@@ -444,6 +562,7 @@ class Button {
         fill(darkGray);
       ellipse(pos[i].x, pos[i].y, d, d);
     }
+    
     fill(255);
     displayPause(pos[0].x, pos[0].y);
     displayPlay(pos[1].x, pos[1].y);
@@ -600,4 +719,5 @@ class StateEntry {
   int year;
   int numOfFires;
   int transparency;
+  int plantedArea;
 }
