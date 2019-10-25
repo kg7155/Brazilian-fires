@@ -29,6 +29,8 @@ String[] nameOfMonths = new String[] {"January", "February", "March", "April", "
 color darkGray = color(127);
 color green = color(182,239,148);
 color lightPink = color(255, 205, 205);
+color lowestAlphaRed = color(255, 245, 245);
+color highestAlphaRed = color(255, 0, 0);
 
 PFont font;
 ControlP5 dropdown;
@@ -68,7 +70,7 @@ void draw() {
   image(Views[thisViewIdx], 0, 0);
 
   displayTitle();
-  displayLegend();
+  displayLegends(width-200, height/21);
   if (!dropdown.get(ScrollableList.class, "dropdown").isOpen()) {
     tl.display();
     btn.display();
@@ -305,26 +307,50 @@ void displayTitle() {
 }
 
 /*----------------------------------------------------------------------*/
-// display legend for planted forests area 
+// display legends for number of fires and planted forests area 
 
-void displayLegend() {
-  fill(darkGray);
+void displayLegends(int x, int y) {
+  // number of fires legend
   textSize(14);
-  text("Planted forests area [ha]:", width-150, height/21);
+  textAlign(LEFT);
+  fill(darkGray);
+  text("Number of fires:", x, y);
+  
+  int h = 150;
+  int w = 20;
+  noFill();
+  // draw top to bottom gradient
+  for (int i = y+20; i <= y+20+h; i++) {
+    float inter = map(i, y, y+20+h, 0, 1);
+    color c = lerpColor(lowestAlphaRed, highestAlphaRed, inter);
+    stroke(c);
+    line(x, i, x+w, i);
+  }
+  
+  // draw numbers
+  fill(darkGray);
+  int step = 6500;
+  for (int i = 0, j = 1; i <= 26000; i = i+step, j++) {
+    text(i, x+30, y-30+h*j/4);  
+  }
+  
+  // planted forests area legend
+  noStroke();
+  text("Planted forests area [ha]:", width-200, height/21+h+100);
 
   int[] sizes = new int[] {15000, 150000, 1500000};
-  int[] ys = new int[] {height/15, height/11, height/7};
+  int[] ys = new int[] {height/21+270, height/21+300, height/21+350};
   
+  // draw circles
   for (int i = 0; i < sizes.length; i++) {
     int size = sizes[i];
     int cs = int(map(size, 13901, 1536310, 10, 60));
     fill(green);
-    ellipse(width-190, ys[i], cs, cs);
+    ellipse(x+8, ys[i], cs, cs);
     
+    // draw numbers
     fill(darkGray);
-    textSize(14);
-    textAlign(LEFT);
-    text(sizes[i], width - 135, ys[i]+5);
+    text(sizes[i], x+45, ys[i]+5);
   }
 }
 
