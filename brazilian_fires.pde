@@ -2,7 +2,6 @@
  data from: http://dados.gov.br/dataset/sistema-nacional-de-informacoes-florestais-snif
  */
 
-import controlP5.*;
 import java.util.*;
 
 HashMap<String, PShape> shapeStatesMap; // states as PShapes
@@ -18,6 +17,8 @@ int endYear = 2016; // end year from data
 int midYear = startYear + (endYear-startYear) / 2; // calculated mid year
 int numYears = endYear - startYear + 1; // number of years
 
+int startMonth = 1;
+
 int thisMonth = 1; // month to display
 int thisYear = 2006; // year to display
 int thisViewIdx; // view index to display
@@ -27,14 +28,14 @@ String[] nameOfMonths = new String[] {"January", "February", "March", "April", "
   "July", "August", "September", "October", "November", "December"};
 
 color darkGray = color(127);
-color green = color(182,239,148);
+color green = color(182, 239, 148);
 color lightPink = color(255, 205, 205);
 color lowestAlphaRed = color(255, 245, 245);
 color highestAlphaRed = color(255, 0, 0);
 
 PFont font;
-ControlP5 dropdown;
-Timeline tl;
+Timeline tlMonths;
+Timeline tlYears;
 Button btn;
 
 /*----------------------------------------------------------------------*/
@@ -50,42 +51,45 @@ void setup() {
   textFont(font);
 
   // create GUI elements
-  dropdown = new ControlP5(this);
-  createDropdown(width/2, height-135);
-  tl = new Timeline(width/2, height-50);
-  btn = new Button(width/2, height-85);
+  btn = new Button(width/2, height-140);
+  tlMonths = new Timeline(width/2, height-102, 'm');
+  tlYears = new Timeline(width/2, height-50, 'y');
 
   loadData();
-  createIdView();
-  createViews();
+  createIdView(width/3, height/7-15);
+  createViews(width/3, height/7-15);
 }
 
 /*----------------------------------------------------------------------*/
 
 void draw() {
   //background(255);
-  tl.rollover(mouseX, mouseY);
   btn.rollover(mouseX, mouseY);
   btn.applyButton();
+  tlMonths.rollover(mouseX, mouseY);
+  tlYears.rollover(mouseX, mouseY);
+
   image(Views[thisViewIdx], 0, 0);
 
   displayTitle();
   displayLegends(width-200, height/21);
-  if (!dropdown.get(ScrollableList.class, "dropdown").isOpen()) {
-    tl.display();
-    btn.display();
-  }
-  showDetails();
+  btn.display();
+  tlMonths.display();
+  tlYears.display();
+
+  showDetails(width/3, height/7-15);
 }
 
 void mousePressed() {
-  tl.press(mouseX, mouseY);
   btn.press(mouseX, mouseY);
+  tlMonths.press(mouseX, mouseY);
+  tlYears.press(mouseX, mouseY);
 }
 
 void mouseReleased() {
-  tl.noPress();
   btn.noPress();
+  tlMonths.noPress();
+  tlYears.noPress();
 }
 
 /*----------------------------------------------------------------------*/
@@ -120,7 +124,7 @@ void loadData() {
 /*----------------------------------------------------------------------*/
 // create view that enables state identification on mouse hover
 
-void createIdView() {
+void createIdView(int w, int h) {
   idView = createGraphics(width, height);
   idView.beginDraw();
   idView.noStroke();
@@ -131,9 +135,8 @@ void createIdView() {
     color clr = entry.getValue();
 
     PShape shapeState = shapeStatesMap.get(stateCode);
-    //shapeState.disableStyle();
     shapeState.setFill(clr);
-    idView.shape(shapeState, width/3, height/7);
+    idView.shape(shapeState, w, h);
   }
   idView.endDraw();
 }
@@ -141,7 +144,7 @@ void createIdView() {
 /*----------------------------------------------------------------------*/
 // create visualisation views for each month and year
 
-void createViews() {
+void createViews(int w, int h) {
   // create PGraphics for each view (each month in period 2006-2016)
   Views = new PGraphics[12*11];
 
@@ -167,8 +170,9 @@ void createViews() {
         shapeState.setStroke(true);
         shapeState.setStroke(color(255));
         shapeState.setStrokeWeight(1);
-        Views[viewIdx].shape(shapeState, width/3, height/7);
-        
+        Views[viewIdx].shape(shapeState, w, h);
+
+        Views[viewIdx].noStroke();
         // draw circles for planted forests
         if (se.plantedArea != 0) {
           int[] xy = coordinatesMap.get(se.stateCode);
@@ -176,7 +180,6 @@ void createViews() {
           Views[viewIdx].fill(green);
           Views[viewIdx].ellipse(xy[0], xy[1], size, size);
         }
-        
       }
       Views[viewIdx].endDraw();
       viewIdx++;
@@ -208,7 +211,7 @@ ArrayList<StateEntry> getStateEntries(int month, int year) {
 
 ArrayList<StateEntry> getStateEntries(String stateCode, int year) {
   ArrayList<StateEntry> stateEntries = new ArrayList<StateEntry>();
-  
+
   // iterate through states 
   for (ArrayList<StateEntry> dataEntries : dataEntriesMap.values()) {
     // iterate through state entries
@@ -256,7 +259,7 @@ void printDataEntriesMap() {
 /*----------------------------------------------------------------------*/
 // highlight selected state by drawing stroke and data details
 
-void showDetails() {
+void showDetails(int w, int h) {
   color mouseClr = idView.get(mouseX, mouseY);
 
   for (StateEntry se : thisStateEntries) {
@@ -272,24 +275,25 @@ void showDetails() {
       shapeState.setStroke(darkGray);
       shapeState.setStrokeWeight(1);
 
-      shape(shapeState, width/3, height/7);
-      
+      shape(shapeState, w, h);
+
+      noStroke();
       if (se.plantedArea != 0) {
-          int[] xy = coordinatesMap.get(se.stateCode);
-          int size = int(map(se.plantedArea, 13901, 1536310, 10, 70));
-          fill(green);
-          ellipse(xy[0], xy[1], size, size);
-        }
+        int[] xy = coordinatesMap.get(se.stateCode);
+        int size = int(map(se.plantedArea, 13901, 1536310, 10, 70));
+        fill(green);
+        ellipse(xy[0], xy[1], size, size);
+      }
 
       fill(darkGray);
       textAlign(CENTER);
       textSize(18);
       text(se.stateName, width/2, height/5*4);
       textSize(14);
-      text("Number of fires: " + se.numOfFires, width/2, height/6*5);
-      
+      text("Number of fires: " + se.numOfFires, width/2, height-190);
+
       if (se.plantedArea != 0)
-        text("Planted forests area: " + se.plantedArea + " ha", width/2, height/6*5+18);
+        text("Planted forests area: " + se.plantedArea + " ha", width/2, height-172);
     }
   }
 }
@@ -299,10 +303,10 @@ void showDetails() {
 
 void displayTitle() {
   fill(darkGray);
-  textSize(20);
+  textSize(25);
   textAlign(CENTER);
   text("Fires vs planted forests in Brazil", width/2, height/18);
-  textSize(25);
+  textSize(20);
   text(nameOfMonths[thisMonth-1] + " " + thisYear, width/2, height/11);
 }
 
@@ -315,7 +319,7 @@ void displayLegends(int x, int y) {
   textAlign(LEFT);
   fill(darkGray);
   text("Number of fires:", x, y);
-  
+
   int h = 150;
   int w = 20;
   noFill();
@@ -326,28 +330,28 @@ void displayLegends(int x, int y) {
     stroke(c);
     line(x, i, x+w, i);
   }
-  
+
   // draw numbers
   fill(darkGray);
   int step = 6500;
   for (int i = 0, j = 1; i <= 26000; i = i+step, j++) {
-    text(i, x+30, y-30+h*j/4);  
+    text(i, x+30, y-10+h*j/4);
   }
-  
+
   // planted forests area legend
   noStroke();
-  text("Planted forests area [ha]:", width-200, height/21+h+100);
+  text("Planted forests area [ha]:", x, y+h+100);
 
   int[] sizes = new int[] {15000, 150000, 1500000};
-  int[] ys = new int[] {height/21+270, height/21+300, height/21+350};
-  
+  int[] ys = new int[] {y+270, y+300, y+350};
+
   // draw circles
   for (int i = 0; i < sizes.length; i++) {
     int size = sizes[i];
     int cs = int(map(size, 13901, 1536310, 10, 60));
     fill(green);
     ellipse(x+8, ys[i], cs, cs);
-    
+
     // draw numbers
     fill(darkGray);
     text(sizes[i], x+45, ys[i]+5);
@@ -409,11 +413,11 @@ void loadPlantData(String fileName) {
       String stateCode = cols[0];
       int year = Integer.parseInt(cols[2]);
       int plantedArea = Integer.parseInt(cols[3]);
-      
+
       // add planted area to all corresponding records
       ArrayList<StateEntry> stateEntries = getStateEntries(stateCode, year);
       for (StateEntry se : stateEntries) {
-        se.plantedArea = plantedArea;  
+        se.plantedArea = plantedArea;
       }
     }
   }
@@ -424,61 +428,24 @@ void loadPlantData(String fileName) {
 
 HashMap<String, int[]> loadCoordinatesFromCSV(String fileName) {
   coordinatesMap = new HashMap<String, int[]>();
-  
+
   String[] rows = loadStrings(fileName);
   for (String row : rows) {
     String[] cols = row.split(",");
-    
+
     if (cols.length >= 4) {
       String stateCode = cols[0];
-      
+
       int xy[] = new int[2];
       xy[0] = Integer.parseInt(cols[2]);
       xy[1] = Integer.parseInt(cols[3]);
-      
+
       if (!coordinatesMap.containsKey(stateCode)) {
         coordinatesMap.put(stateCode, xy);
       }
     }
   }
   return coordinatesMap;
-}
-
-/*----------------------------------------------------------------------*/
-// create and style dropdown control
-
-void createDropdown(float x, float y) {
-  // centre menu
-  int ddWidth = 80;
-  x = x - ddWidth/2;
-
-  dropdown.setFont(font, 10);
-  dropdown.setColorCaptionLabel(darkGray);
-  dropdown.setColorForeground(color(255, 0, 0, 12));
-  dropdown.setColorActive(color(255, 0, 0, 12));
-
-  dropdown.addScrollableList("dropdown")
-    .addItems(Arrays.asList(nameOfMonths))
-    .setPosition(x, y)
-    .setSize(ddWidth, 100)
-    .setBarHeight(20)
-    .setItemHeight(20)
-    .setType(ScrollableList.DROPDOWN)
-    .setOpen(false)
-    .setColorBackground(lightPink)
-    ;
-
-  dropdown.get(ScrollableList.class, "dropdown").setValue(thisMonth-1);
-}
-
-/*----------------------------------------------------------------------*/
-// listen to changes in dropdown selection and react accordingly
-// n: selected item index
-
-void dropdown(int n) {
-  thisMonth = n+1;
-  thisViewIdx = getViewIdx(thisMonth, thisYear);
-  thisStateEntries = getStateEntries(thisMonth, thisYear);
 }
 
 //////////////////////////////////
@@ -522,7 +489,6 @@ class Button {
       thisMonth = 1;
       thisViewIdx = getViewIdx(thisMonth, thisYear);
       thisStateEntries = getStateEntries(thisMonth, thisYear);
-      dropdown.get(ScrollableList.class, "dropdown").setValue(thisMonth-1);
     }
   }
 
@@ -531,7 +497,7 @@ class Button {
 
   void press(float mx, float my) {
     for (int i = 0; i < pos.length; i++) {
-      if ((dist(mx, my, pos[i].x, pos[i].y) < d/2) && (!dropdown.get(ScrollableList.class, "dropdown").isOpen())) {
+      if (dist(mx, my, pos[i].x, pos[i].y) < d/2) {
         pressed[i] = true;
       }
     }
@@ -573,10 +539,6 @@ class Button {
     }
     counter++;
 
-    if (play) {
-      dropdown.get(ScrollableList.class, "dropdown").setValue(thisMonth-1);
-    }
-
     noStroke();
     // draw button icons according to their status
     for (int i = 0; i < pos.length; i++) {
@@ -588,7 +550,7 @@ class Button {
         fill(darkGray);
       ellipse(pos[i].x, pos[i].y, d, d);
     }
-    
+
     fill(255);
     displayPause(pos[0].x, pos[0].y);
     displayPlay(pos[1].x, pos[1].y);
@@ -623,7 +585,9 @@ class Timeline {
   PVector p0;  // centre of the timeline
   PVector[] pos;  // array of circle positions
 
-  int midIdx;  // middle year index
+  char option; // option to display (years or months)
+  int numElements; // number of elements to display
+  int midIdx;  // middle element index
   int r;  // circle radius
   int d;  // distance between circles
 
@@ -632,17 +596,23 @@ class Timeline {
 
   /*----------------------------*/
 
-  public Timeline(int x, int y) {
-    midIdx = numYears/2;
+  public Timeline(int x, int y, char option) {
+    this.option = option;
+    if (option == 'm')
+      numElements = 12;
+    else if (option == 'y')
+      numElements = numYears;
+    
+    midIdx = numElements/2;
     r = 6;
     d = 2*r + 40;
 
     p0 = new PVector(x, y);
     pos = setPosition();
 
-    mouseOver = new Boolean[numYears];
-    pressed = new Boolean[numYears];
-    for (int i = 0; i < numYears; i++) {
+    mouseOver = new Boolean[numElements];
+    pressed = new Boolean[numElements];
+    for (int i = 0; i < numElements; i++) {
       mouseOver[i] = false;    
       pressed[i] = false;
     }
@@ -652,12 +622,12 @@ class Timeline {
   // set position of each circle
 
   PVector[] setPosition() {
-    PVector[] p = new PVector[numYears];
+    PVector[] p = new PVector[numElements];
 
     for (int i = midIdx; i >= 0; i--)
       p[i] = new PVector(p0.x - (midIdx - i)*d, p0.y);    
 
-    for (int i = midIdx + 1; i < numYears; i++)  
+    for (int i = midIdx + 1; i < numElements; i++)  
       p[i] = new PVector(p0.x + (i - midIdx)*d, p0.y);
 
     return p;
@@ -667,7 +637,7 @@ class Timeline {
   // if mouse is over any button, make mouseover true or false
 
   void rollover(float mx, float my) {
-    for (int i = 0; i < numYears; i++) {
+    for (int i = 0; i < numElements; i++) {
       if (dist(mx, my, pos[i].x, pos[i].y) < r)
         mouseOver[i] = true;
       else
@@ -679,10 +649,13 @@ class Timeline {
   // if any button is pressed, make pressed true and update view variables
 
   void press(float mx, float my) {
-    for (int i = 0; i < numYears; i++)
-      if ((dist(mx, my, pos[i].x, pos[i].y) < r) && (!dropdown.get(ScrollableList.class, "dropdown").isOpen())) {
+    for (int i = 0; i < numElements; i++)
+      if (dist(mx, my, pos[i].x, pos[i].y) < r) {
         pressed[i] = true;
-        thisYear = startYear + i;
+        if (option == 'y')
+          thisYear = startYear + i;
+        else if (option == 'm')
+          thisMonth = startMonth + i;
         thisViewIdx = getViewIdx(thisMonth, thisYear);
         thisStateEntries = getStateEntries(thisMonth, thisYear);
       }
@@ -692,24 +665,28 @@ class Timeline {
   // make pressed false for each button (used with mouseReleased event)
 
   void noPress() {
-    for (int i = 0; i < numYears; i++)
+    for (int i = 0; i < numElements; i++)
       pressed[i] = false;
   }
 
   /*----------------------------*/
 
   void display() {        
-    int thisYearIdx = thisYear - startYear;
+    int thisElementIdx = thisYear - startYear;
+
+    if (option == 'm') {
+      thisElementIdx = thisMonth - 1;
+    }
 
     // draw line
     strokeWeight(2);
     stroke(darkGray);
-    line(pos[0].x, pos[0].y, pos[numYears-1].x, pos[numYears-1].y); 
+    line(pos[0].x, pos[0].y, pos[numElements-1].x, pos[numElements-1].y); 
 
     // draw circles
     strokeWeight(4);
-    for (int i = 0; i < numYears; i++) {
-      if (thisYearIdx == i) {
+    for (int i = 0; i < numElements; i++) {
+      if (thisElementIdx == i) {
         stroke(darkGray);    
         fill(lightPink);
       } else if (mouseOver[i]) {   
@@ -722,17 +699,22 @@ class Timeline {
       ellipse(pos[i].x, pos[i].y, 2*r, 2*r);
     } 
 
-    // draw text (years)
     textAlign(CENTER);
     textSize(14);
     fill(darkGray);
-    for (int i = 0; i < numYears; i++)    
-      if (mouseOver[i])
-        text(2006+i, pos[i].x, pos[i].y - 2*r);  
+    // draw text (years)
+    if (option == 'y') {
+      for (int i = 0; i < numElements; i++)    
+        if (mouseOver[i])
+          text(2006+i, pos[i].x, pos[i].y - 2*r);  
 
-    text(startYear, pos[0].x, pos[0].y + 3*r); 
-    text(midYear, pos[midIdx].x, pos[midIdx].y + 3*r);  
-    text(endYear, pos[numYears -1].x, pos[numYears -1].y + 3*r);
+      text(startYear, pos[0].x, pos[0].y + 3*r); 
+      text(midYear, pos[midIdx].x, pos[midIdx].y + 3*r);  
+      text(endYear, pos[numElements-1].x, pos[numElements-1].y + 3*r);
+    } else if (option == 'm') {
+      for (int i = 0; i < numElements; i++)    
+        text(nameOfMonths[i].substring(0, 3), pos[i].x, pos[i].y + 3*r);
+    }
   }
 }
 
