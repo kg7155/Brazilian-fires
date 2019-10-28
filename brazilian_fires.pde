@@ -9,15 +9,17 @@ HashMap<String, ArrayList<StateEntry>> dataEntriesMap; // my data structure
 HashMap<String, Integer> statesColoursMap; // states colours for id
 HashMap<String, int[]> coordinatesMap; // states coordinates
 PShape psBrazil; // map of Brazil (http://www.amcharts.com/svg-maps/)
-PGraphics idView; // hidden view that enables state identification
+PGraphics idView; // a hidden view that enables state identification
 PGraphics[] Views; // other visualisation views
 
+float mapX = width/3;
+float mapY = height/7-15;
+
+int startMonth = 1; // start month from data
 int startYear = 2006; // start year from data
 int endYear = 2016; // end year from data
 int midYear = startYear + (endYear-startYear) / 2; // calculated mid year
 int numYears = endYear - startYear + 1; // number of years
-
-int startMonth = 1;
 
 int thisMonth = 1; // month to display
 int thisYear = 2006; // year to display
@@ -52,24 +54,26 @@ void setup() {
 
   // create GUI elements
   btn = new Button(width/2, height-140);
-  tlMonths = new Timeline(width/2, height-102, 'm');
+  tlMonths = new Timeline(width/2+28, height-102, 'm');
   tlYears = new Timeline(width/2, height-50, 'y');
 
   loadData();
-  createIdView(width/3, height/7-15);
-  createViews(width/3, height/7-15);
+
+  // create views
+  createIdView(610, 633);
+  createViews(mapX, mapY, 610, 633);
 }
 
 /*----------------------------------------------------------------------*/
 
 void draw() {
-  //background(255);
+  background(255);
   btn.rollover(mouseX, mouseY);
   btn.applyButton();
   tlMonths.rollover(mouseX, mouseY);
   tlYears.rollover(mouseX, mouseY);
 
-  image(Views[thisViewIdx], 0, 0);
+  image(Views[thisViewIdx], width/3, height/7-15);
 
   displayTitle();
   displayLegends(width-200, height/21);
@@ -117,15 +121,13 @@ void loadData() {
 
   // set initial state entries to display
   thisStateEntries = getStateEntries(thisMonth, thisYear);
-  //println(Arrays.toString(thisStateEntries.toArray()));
-  //printDataEntriesMap();
 }
 
 /*----------------------------------------------------------------------*/
 // create view that enables state identification on mouse hover
 
 void createIdView(int w, int h) {
-  idView = createGraphics(width, height);
+  idView = createGraphics(w, h);
   idView.beginDraw();
   idView.noStroke();
   idView.background(255);
@@ -136,7 +138,7 @@ void createIdView(int w, int h) {
 
     PShape shapeState = shapeStatesMap.get(stateCode);
     shapeState.setFill(clr);
-    idView.shape(shapeState, w, h);
+    idView.shape(shapeState);
   }
   idView.endDraw();
 }
@@ -144,12 +146,12 @@ void createIdView(int w, int h) {
 /*----------------------------------------------------------------------*/
 // create visualisation views for each month and year
 
-void createViews(int w, int h) {
+void createViews(int x, int y, int w, int h) {
   // create PGraphics for each view (each month in period 2006-2016)
   Views = new PGraphics[12*11];
 
   for (int i = 0; i < Views.length; i++) {
-    Views[i] = createGraphics(width, height);
+    Views[i] = createGraphics(w, h);
   }
 
   // prepare PGraphics for each view
@@ -170,7 +172,7 @@ void createViews(int w, int h) {
         shapeState.setStroke(true);
         shapeState.setStroke(color(255));
         shapeState.setStrokeWeight(1);
-        Views[viewIdx].shape(shapeState, w, h);
+        Views[viewIdx].shape(shapeState);
 
         Views[viewIdx].noStroke();
         // draw circles for planted forests
@@ -178,7 +180,7 @@ void createViews(int w, int h) {
           int[] xy = coordinatesMap.get(se.stateCode);
           int size = int(map(se.plantedArea, 13901, 1536310, 10, 70));
           Views[viewIdx].fill(green);
-          Views[viewIdx].ellipse(xy[0], xy[1], size, size);
+          Views[viewIdx].ellipse(xy[0]-x, xy[1]-y, size, size);
         }
       }
       Views[viewIdx].endDraw();
@@ -259,8 +261,8 @@ void printDataEntriesMap() {
 /*----------------------------------------------------------------------*/
 // highlight selected state by drawing stroke and data details
 
-void showDetails(int w, int h) {
-  color mouseClr = idView.get(mouseX, mouseY);
+void showDetails(int x, int y) {
+  color mouseClr = idView.get(mouseX-x, mouseY-y);
 
   for (StateEntry se : thisStateEntries) {
     PShape shapeState = shapeStatesMap.get(se.stateCode);
@@ -275,7 +277,7 @@ void showDetails(int w, int h) {
       shapeState.setStroke(darkGray);
       shapeState.setStrokeWeight(1);
 
-      shape(shapeState, w, h);
+      shape(shapeState, x, y);
 
       noStroke();
       if (se.plantedArea != 0) {
@@ -602,7 +604,7 @@ class Timeline {
       numElements = 12;
     else if (option == 'y')
       numElements = numYears;
-    
+
     midIdx = numElements/2;
     r = 6;
     d = 2*r + 40;
