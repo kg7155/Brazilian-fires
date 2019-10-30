@@ -1,7 +1,3 @@
-/* VISUALISATION: fires vs planting in Brazil between 2006 and 2016
- data from: http://dados.gov.br/dataset/sistema-nacional-de-informacoes-florestais-snif
- */
-
 import java.util.*;
 
 HashMap<String, PShape> shapeStatesMap; // states as PShapes
@@ -318,12 +314,12 @@ void showDetails() {
       fill(darkGray);
       textAlign(CENTER);
       textSize(18);
-      text(se.stateName, width/2/scaleFactor, height*5/7/scaleFactor+40);
+      text(se.stateName, width/2/scaleFactor, height*5/7/scaleFactor+50);
       textSize(14);
-      text("Number of fires: " + se.numOfFires, width/2/scaleFactor, height*5/7/scaleFactor+60);
+      text("Number of fires: " + se.numOfFires, width/2/scaleFactor, height*5/7/scaleFactor+70);
 
       if (se.plantedArea != 0)
-        text("Planted forests area: " + se.plantedArea + " ha", width/2/scaleFactor, height*5/7/scaleFactor+80);
+        text("Planted forests area: " + se.plantedArea + " ha", width/2/scaleFactor, height*5/7/scaleFactor+90);
     }
   }
 
