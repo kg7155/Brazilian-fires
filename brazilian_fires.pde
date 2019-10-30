@@ -12,9 +12,6 @@ PShape psBrazil; // map of Brazil (http://www.amcharts.com/svg-maps/)
 PGraphics idView; // a hidden view that enables state identification
 PGraphics[] Views; // other visualisation views
 
-float mapX = width/3;
-float mapY = height/7-15;
-
 int startMonth = 1; // start month from data
 int startYear = 2006; // start year from data
 int endYear = 2016; // end year from data
@@ -28,6 +25,13 @@ ArrayList<StateEntry> thisStateEntries; // state entries to display
 
 String[] nameOfMonths = new String[] {"January", "February", "March", "April", "May", "June", 
   "July", "August", "September", "October", "November", "December"};
+
+int svgMapHeight = 633;
+int graphicsHeight;
+int graphicsWidth;
+int graphicsX;
+int graphicsY;
+float scaleFactor;
 
 color darkGray = color(127);
 color green = color(182, 239, 148);
@@ -44,9 +48,15 @@ Button btn;
 
 void setup() {
   background(255);
-  //size(1280, 960, P2D);
   fullScreen(P2D);
   smooth(8);
+
+  // set graphics position constants
+  graphicsWidth = width/3;
+  graphicsHeight = height*3/5;
+  graphicsX = width/3;
+  graphicsY = height/7-15;
+  scaleFactor = (float)graphicsHeight/(float)svgMapHeight;
 
   // load and set font
   font = createFont("SEGOEUI.TTF", 34);
@@ -60,20 +70,21 @@ void setup() {
   loadData();
 
   // create views
-  createIdView(610, 633);
-  createViews(mapX, mapY, 610, 633);
+  createIdView();
+  createViews();
 }
 
 /*----------------------------------------------------------------------*/
 
 void draw() {
   background(255);
+
   btn.rollover(mouseX, mouseY);
   btn.applyButton();
   tlMonths.rollover(mouseX, mouseY);
   tlYears.rollover(mouseX, mouseY);
 
-  image(Views[thisViewIdx], width/3, height/7-15);
+  image(Views[thisViewIdx], graphicsX, graphicsY);
 
   displayTitle();
   displayLegends(width-200, height/21);
@@ -81,7 +92,7 @@ void draw() {
   tlMonths.display();
   tlYears.display();
 
-  showDetails(width/3, height/7-15);
+  showDetails();
 }
 
 void mousePressed() {
@@ -126,32 +137,35 @@ void loadData() {
 /*----------------------------------------------------------------------*/
 // create view that enables state identification on mouse hover
 
-void createIdView(int w, int h) {
-  idView = createGraphics(w, h);
+void createIdView() {
+  idView = createGraphics(graphicsWidth, graphicsHeight);
   idView.beginDraw();
   idView.noStroke();
   idView.background(255);
-
+  idView.push();
+  idView.scale(scaleFactor);
   for (HashMap.Entry<String, Integer> entry : statesColoursMap.entrySet()) {
     String stateCode = entry.getKey();
     color clr = entry.getValue();
 
     PShape shapeState = shapeStatesMap.get(stateCode);
     shapeState.setFill(clr);
+
     idView.shape(shapeState);
   }
+  idView.pop();
   idView.endDraw();
 }
 
 /*----------------------------------------------------------------------*/
 // create visualisation views for each month and year
 
-void createViews(int x, int y, int w, int h) {
+void createViews() {
   // create PGraphics for each view (each month in period 2006-2016)
   Views = new PGraphics[12*11];
 
   for (int i = 0; i < Views.length; i++) {
-    Views[i] = createGraphics(w, h);
+    Views[i] = createGraphics(graphicsWidth, graphicsHeight);
   }
 
   // prepare PGraphics for each view
@@ -159,11 +173,14 @@ void createViews(int x, int y, int w, int h) {
   for (int year = startYear; year <= endYear; year++) {
     for (int month = 1; month <= 12; month++) {
       Views[viewIdx].beginDraw();
+      Views[viewIdx].push();
+      Views[viewIdx].scale(scaleFactor);
       Views[viewIdx].noStroke();
       Views[viewIdx].background(255);  
 
       ArrayList<StateEntry> stateEntries = getStateEntries(month, year);
 
+      // draw state shapes
       for (StateEntry se : stateEntries) {
         PShape shapeState = shapeStatesMap.get(se.stateCode);
         color clr = color(255, (255 - se.transparency), (255 - se.transparency));
@@ -172,17 +189,25 @@ void createViews(int x, int y, int w, int h) {
         shapeState.setStroke(true);
         shapeState.setStroke(color(255));
         shapeState.setStrokeWeight(1);
-        Views[viewIdx].shape(shapeState);
 
-        Views[viewIdx].noStroke();
-        // draw circles for planted forests
+        Views[viewIdx].shape(shapeState);
+      }
+
+      Views[viewIdx].noStroke();
+      // draw circles for planted forests
+      for (StateEntry se : stateEntries) {
         if (se.plantedArea != 0) {
           int[] xy = coordinatesMap.get(se.stateCode);
           int size = int(map(se.plantedArea, 13901, 1536310, 10, 70));
           Views[viewIdx].fill(green);
-          Views[viewIdx].ellipse(xy[0]-x, xy[1]-y, size, size);
+          float xx = (xy[0]-graphicsX/scaleFactor);
+          float yy = (xy[1]-graphicsY/scaleFactor);
+          Views[viewIdx].ellipse(xx, yy, size, size);
+          if (year == startYear && month == startMonth)
+            println("drawing " + se.stateCode + " ellipse at: " + xx + " " + yy);
         }
       }
+      Views[viewIdx].pop();
       Views[viewIdx].endDraw();
       viewIdx++;
     }
@@ -261,8 +286,11 @@ void printDataEntriesMap() {
 /*----------------------------------------------------------------------*/
 // highlight selected state by drawing stroke and data details
 
-void showDetails(int x, int y) {
-  color mouseClr = idView.get(mouseX-x, mouseY-y);
+void showDetails() {
+  color mouseClr = idView.get(mouseX-graphicsX, mouseY-graphicsY);
+
+  push();
+  scale(scaleFactor);
 
   for (StateEntry se : thisStateEntries) {
     PShape shapeState = shapeStatesMap.get(se.stateCode);
@@ -277,7 +305,7 @@ void showDetails(int x, int y) {
       shapeState.setStroke(darkGray);
       shapeState.setStrokeWeight(1);
 
-      shape(shapeState, x, y);
+      shape(shapeState, graphicsX / scaleFactor, graphicsY / scaleFactor);
 
       noStroke();
       if (se.plantedArea != 0) {
@@ -290,14 +318,16 @@ void showDetails(int x, int y) {
       fill(darkGray);
       textAlign(CENTER);
       textSize(18);
-      text(se.stateName, width/2, height/5*4);
+      text(se.stateName, width/2/scaleFactor, height*5/7/scaleFactor+40);
       textSize(14);
-      text("Number of fires: " + se.numOfFires, width/2, height-190);
+      text("Number of fires: " + se.numOfFires, width/2/scaleFactor, height*5/7/scaleFactor+60);
 
       if (se.plantedArea != 0)
-        text("Planted forests area: " + se.plantedArea + " ha", width/2, height-172);
+        text("Planted forests area: " + se.plantedArea + " ha", width/2/scaleFactor, height*5/7/scaleFactor+80);
     }
   }
+
+  pop();
 }
 
 /*----------------------------------------------------------------------*/
@@ -528,7 +558,7 @@ class Button {
   /*----------------------------*/
 
   void display() {
-    if (play && (counter % 20 == 0)) {
+    if (play && (counter % 35 == 0)) {
       if (thisViewIdx < Views.length - 1) {
         thisViewIdx++;
       } else {
