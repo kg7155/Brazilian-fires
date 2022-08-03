@@ -11,3 +11,5 @@ Visualisation timelines enable showing the data for desired month and year. Play
 
 Data are from period 2006 to 2016, acquired from Brazilian open data portal: http://dados.gov.br/dataset/sistema-nacional-de-informacoes-florestais-snif
 Not all states have planted forest area data, so only those who do, are visualised.
+
+You can open the visualisation in Windows OS (64-bit) by downloading the repository and opening "brazilian_fires.exe".
